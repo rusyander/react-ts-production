@@ -8,7 +8,7 @@ interface LoaderProps {
 
 export const Loader: FC<LoaderProps> = ({ className }) => {
     return (
-        <div className={classNames('lds-ellipsis', {}, [className])}>
+        <div className={classNames(cls.lds_ellipsis, {}, [className])}>
             <div>
                 <div></div>
                 <div></div>
