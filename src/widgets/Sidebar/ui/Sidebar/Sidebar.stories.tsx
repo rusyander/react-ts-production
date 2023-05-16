@@ -1,16 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Sidebar } from './Sidebar'
+import { Sidebar } from './Sidebar';
+import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Sidebar> = {
   title: 'shared/Sidebar',
   component: Sidebar,
-  tags: ['autodocs']
-}
+  tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <BrowserRouter>
+        <Story />
+      </BrowserRouter>
+    ),
+  ],
+};
 
-export default meta
-type Story = StoryObj<typeof Sidebar>
+export default meta;
+type Story = StoryObj<typeof Sidebar>;
 
-export const Light: Story = {}
+export const Light: Story = {};
 
-export const dark: Story = {}
+export const Dark: Story = {};
