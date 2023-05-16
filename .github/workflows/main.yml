@@ -30,6 +30,6 @@ jobs:
             - name: storybook build
               run: npm run storybook:build
             - name: run screenshot testing
-              run: npm run test:ui:ci
+              run: npx loki --requireReference --reactUri file:./storybook-static
             - name: linting css
               run: npm run lint:css
