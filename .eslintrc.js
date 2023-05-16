@@ -62,7 +62,7 @@ module.exports = {
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/comma-dangle': 'warn',
-        '@typescript-eslint/semi': 'warn',
+        '@typescript-eslint/semi': 'off',
         '@typescript-eslint/explicit-function-return-type': 'warn',
         'no-unused-vars': 'warn',
         '@typescript-eslint/no-unused-vars': 'warn',
@@ -80,6 +80,8 @@ module.exports = {
         '@typescript-eslint/quotes': 'warn',
         '@typescript-eslint/consistent-type-imports': 'warn',
         '@typescript-eslint/space-before-function-paren': 'warn',
+        '@typescript-eslint/prefer-ts-expect-error': 'warn',
+        '@typescript-eslint/prefer-includes': 'warn',
     },
     globals: {
         __IS_DEV__: true,
