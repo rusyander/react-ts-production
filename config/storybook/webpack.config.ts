@@ -24,10 +24,36 @@ export default ({ config }: { config: webpack.Configuration }) => {
     //         return rule;
     //     }
     // );
+
+
+
     config.module?.rules?.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
+
+
+
+    // config.module.rules = config.module.rules.map(rule => {
+    //     if (
+    //       String(rule.test) === String(/\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)$/i)
+    //     ) {
+    //       return {
+    //         ...rule,
+    //         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)$/i,
+    //       }
+    //     }
+      
+    //     return rule
+    //   })
+      
+    //   // use svgr for svg files
+    //   config.module.rules.push({
+    //     test: /\.svg$/,
+    //     use: ["@svgr/webpack", "url-loader"],
+    //   })
+
+
     config.module?.rules?.push(buildCssLoaders(true));
 
     return config;
