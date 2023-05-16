@@ -10,22 +10,22 @@
 
 // .storybook/preview.tsx
 
-import React from 'react';
+import React from 'react'
 
-import { Preview } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
+import { type Preview } from '@storybook/react'
+import { Theme } from 'app/providers/ThemeProvider'
 
 // const theme: Theme = null;
-const theme = 'dark';
+const theme = 'dark'
 
 const ThemeDecorator: Preview = {
-    decorators: [
-        (Story) => (
-            <div className={`'app' ${theme}`}>
+  decorators: [
+    (Story) => (
+        <div className={`'app' ${theme}`}>
                 <Story />
             </div>
-        ),
-    ],
-};
+    )
+  ]
+}
 
-export default ThemeDecorator;
+export default ThemeDecorator

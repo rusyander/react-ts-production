@@ -5,23 +5,25 @@ module.exports = {
         jest: true,
     },
     extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
         'standard-with-typescript',
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
     ],
-    // parser: '@typescript-eslint/parser',
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        // project: ['./tsconfig.json'],
+        project: './tsconfig.json',
     },
 
-    plugins: ['react', 'i18next'],
+    plugins: ['react', 'i18next', '@typescript-eslint'],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
+        'react/jsx-indent': [0, 0],
+        'react/jsx-indent-props': [0, 2],
+        indent: [0, 0],
         'react/jsx-filename-extension': [
             2,
             {
@@ -55,6 +57,29 @@ module.exports = {
                 code: 120,
             },
         ],
+        indent: 'warn',
+        '@typescript-eslint/indent': 'warn',
+        '@typescript-eslint/prefer-nullish-coalescing': 'off',
+        '@typescript-eslint/strict-boolean-expressions': 'off',
+        '@typescript-eslint/comma-dangle': 'warn',
+        '@typescript-eslint/semi': 'warn',
+        '@typescript-eslint/explicit-function-return-type': 'warn',
+        'no-unused-vars': 'warn',
+        '@typescript-eslint/no-unused-vars': 'warn',
+        'i18next/no-literal-string': 'off',
+        'react/no-unescaped-entities': 'warn',
+        '@typescript-eslint/await-thenable': 'warn',
+        '@typescript-eslint/no-confusing-void-expression': 'warn',
+        '@typescript-eslint/no-floating-promises': 'warn',
+        '@typescript-eslint/naming-convention': 'off',
+        'n/handle-callback-error': 'off',
+        'n/handle-callback-err': 'warn',
+        'no-trailing-spaces': 'warn',
+        '@typescript-eslint/member-delimiter-style': 'warn',
+        '@typescript-eslint/parser': 'off',
+        '@typescript-eslint/quotes': 'warn',
+        '@typescript-eslint/consistent-type-imports': 'warn',
+        '@typescript-eslint/space-before-function-paren': 'warn',
     },
     globals: {
         __IS_DEV__: true,
@@ -68,35 +93,3 @@ module.exports = {
         },
     ],
 };
-
-// module.exports = {
-//   env: {
-//     browser: true,
-//     es2021: true,
-//   },
-//   extends: ['plugin:react/recommended', 'airbnb'],
-//   parser: '@typescript-eslint/parser',
-//   parserOptions: {
-//     ecmaFeatures: {
-//       jsx: true,
-//     },
-//     ecmaVersion: 'latest',
-//     sourceType: 'module',
-//   },
-//   plugins: ['react', '@typescript-eslint'],
-//   rules: {
-//     // quotes: ["error", "double"],
-//     'react/jsx-indent': [2, 4],
-//     // 'react/jsx-indent-props': [2, 4],
-//     // indent: [2, 4],
-//     'react/jsx-filename-extension': [
-//       2,
-//       { extensions: ['.js', '.jsx', '.tsx'] },
-//     ],
-//     'import/no-unresolved': 'off',
-//     'linebreak-style': [
-//       'error',
-//       process.platform === 'win32' ? 'windows' : 'unix',
-//     ],
-//   },
-// };
