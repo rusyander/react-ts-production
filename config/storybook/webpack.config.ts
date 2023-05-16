@@ -1,29 +1,21 @@
-/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import type webpack from 'webpack';
-import { type RuleSetRule } from 'webpack';
-import { type BuildPaths } from '../build/types/config';
+import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
+import { BuildPaths } from '../build/types/config';
 import { buildCssLoaders } from '../build/loaders/buildCssLoaders';
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
-    entry: '',
     build: '',
     html: '',
+    entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
-  config.resolve?.modules?.push(paths.src);
-  config.resolve?.extensions?.push('.ts', '.tsx');
-  config.module?.rules?.push({
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  });
+  config.resolve.modules.push(paths.src);
+  config.resolve.extensions.push('.ts', '.tsx');
 
   // eslint-disable-next-line no-param-reassign
   config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
-    // @ts-ignore
-    if ((rule.test as string).includes('svg')) {
+    if (/svg/.test(rule.test as string)) {
       return { ...rule, exclude: /\.svg$/i };
     }
 
@@ -34,8 +26,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   });
-
-  config.module?.rules?.push(buildCssLoaders(true));
+  config.module.rules.push(buildCssLoaders(true));
 
   return config;
 };

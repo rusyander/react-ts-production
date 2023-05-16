@@ -1,9 +1,9 @@
 .Sidebar {
-  height: var(--sidebar-height);
+  height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width);
   background: var(--invert-bg-color);
   position: relative;
-  transition: width 0.3s ease-in-out;
+  transition: width 0.3s;
 }
 
 .switchers {
@@ -14,15 +14,14 @@
   width: 100%;
 }
 
-.language {
+.lang {
   margin-left: 20px;
 }
 
-.colapseBtn {
+.collapseBtn {
   position: absolute;
-  bottom: 32px;
   right: -32px;
-  cursor: pointer;
+  bottom: 32px;
 }
 
 .items {
@@ -58,13 +57,13 @@
     align-items: center;
   }
 
-  .language {
-    margin: 0;
+  .lang {
+    margin-left: 0;
   }
 
   .link {
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    transition: 0.2s opacity;
     width: 0;
   }
 }
