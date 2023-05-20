@@ -3,15 +3,15 @@ import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 const preview = {
-    parameters: {
-        actions: { argTypesRegex: '^on[A-Z].*' },
-        controls: {
-            matchers: {
-                color: /(background|color)$/i,
-                date: /Date$/,
-            },
-        },
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
     },
+  },
 };
 
 export default preview;

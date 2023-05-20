@@ -19,7 +19,7 @@ module.exports = {
     project: './tsconfig.json',
   },
 
-  plugins: ['react', 'i18next', '@typescript-eslint'],
+  plugins: ['react', 'react-hooks', 'i18next', '@typescript-eslint'],
   rules: {
     'react/jsx-indent': [0, 2],
     'react/jsx-indent-props': [0, 2],
@@ -76,21 +76,24 @@ module.exports = {
     'no-trailing-spaces': 'warn',
     '@typescript-eslint/parser': 'off',
     '@typescript-eslint/quotes': 'warn',
-    '@typescript-eslint/consistent-type-imports': 'warn',
     '@typescript-eslint/space-before-function-paren': 'warn',
     '@typescript-eslint/prefer-ts-expect-error': 'warn',
     '@typescript-eslint/prefer-includes': 'warn',
     '@typescript-eslint/member-delimiter-style': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    '@typescript-eslint/consistent-type-imports': 'off',
   },
   globals: {
     __IS_DEV__: true,
   },
   overrides: [
     {
-      files: ['**/src/**/*.test.{ts,tsx,js,jsx}'],
+      files: ['**/src/**/*.{test,stories}.{ts,tsx,js,jsx}'],
       rules: {
         'i18next/no-literal-string': 'off',
+        'max-len': 'off',
       },
     },
   ],
