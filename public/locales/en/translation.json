@@ -8,5 +8,8 @@
   "О сайте": "About",
   "Войти": "Sing In",
   "Введите username": "Enter username",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неправельные данные": "You have entered incorrect data",
+  "Выйти": "Sing Out"
 }

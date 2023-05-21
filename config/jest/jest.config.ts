@@ -12,6 +12,7 @@ export default {
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   moduleDirectories: ['node_modules'],
   modulePaths: ['<rootDir>src'],
+  transformIgnorePatterns: ['node_modules/(?!axios)'],
   testMatch: [
     // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',

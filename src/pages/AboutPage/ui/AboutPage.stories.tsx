@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Suspense } from 'react';
 
-import AboutPage from './AboutPage'
-import { BrowserRouter } from 'react-router-dom'
+import AboutPage from './AboutPage';
+import { BrowserRouter } from 'react-router-dom';
+import { StoreProvider } from 'app/providers/StoreProvider';
 // import { Theme } from 'app/providers/ThemeProvider';
 
 const meta: Meta<typeof AboutPage> = {
@@ -11,15 +13,19 @@ const meta: Meta<typeof AboutPage> = {
 
   decorators: [
     (Story) => (
-        <BrowserRouter>
-                <Story />
-            </BrowserRouter>
-    )
-  ]
-}
+      <Suspense fallback={''}>
+        <StoreProvider>
+          <BrowserRouter>
+            <Story />
+          </BrowserRouter>
+        </StoreProvider>
+      </Suspense>
+    ),
+  ],
+};
 
-export default meta
-type Story = StoryObj<typeof AboutPage>
+export default meta;
+type Story = StoryObj<typeof AboutPage>;
 
-export const Dark: Story = {}
-export const Light: Story = {}
+export const Dark: Story = {};
+export const Light: Story = {};

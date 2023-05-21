@@ -1,9 +1,5 @@
-import React from 'react';
-
 import { type Preview } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
 
-// const theme: Theme = null;
 const theme = 'dark';
 
 const ThemeDecorator: Preview = {
