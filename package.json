@@ -24,7 +24,8 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "open": ".loki\\report.html",
-    "test:ui:report": "npm run test:ui:json && npm run test:ui:html && npm run open"
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html && npm run open",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -91,7 +92,8 @@
     "webpack": "^5.69.1",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.7.4",
-    "json-server": "^0.7.19"
+    "json-server": "^0.7.19",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",

@@ -21,10 +21,10 @@ module.exports = {
 
   plugins: ['react', 'react-hooks', 'i18next', '@typescript-eslint'],
   rules: {
-    'react/jsx-indent': [2, 2],
-    'react/jsx-indent-props': [2, 2],
+    'react/jsx-indent': [0, 2],
+    'react/jsx-indent-props': [0, 2],
     '@typescript-eslint/indent': 'warn',
-    indent: [2, 2],
+    indent: [0, 2],
     'react/jsx-filename-extension': [
       2,
       {
