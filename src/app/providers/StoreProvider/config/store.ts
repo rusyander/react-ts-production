@@ -4,7 +4,7 @@ import { CounterReducer } from 'entities/Counter';
 import { UserReducer } from 'entities/User';
 import { LoginReducer } from 'features/AuthByUserName';
 
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore (initialState?: StateSchema) {
   const rootReduser: ReducersMapObject<StateSchema> = {
     counter: CounterReducer,
     user: UserReducer,

@@ -9,9 +9,9 @@ interface LoginUsernameProps {
 }
 
 export const loginByUserName = createAsyncThunk<
-  User,
-  LoginUsernameProps,
-  { rejectValue: string }
+User,
+LoginUsernameProps,
+{ rejectValue: string }
 >('login/loginByUserName', async ({ username, password }, thinkAPI) => {
   try {
     const response = await axios.post('http://localhost:9988/login', {

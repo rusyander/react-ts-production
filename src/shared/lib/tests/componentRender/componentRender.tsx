@@ -11,7 +11,7 @@ export interface ComponentRenderProps {
   initialState?: DeepPartial<StateSchema>;
 }
 
-export function componentRender(
+export function componentRender (
   component: ReactNode,
   options: ComponentRenderProps = {}
 ) {

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 // import { Counter } from 'entities/Counter';
 // import { Input } from 'shared/ui/Input/Input';
 
-export default function MainPage() {
+export default function MainPage () {
   const { t } = useTranslation('main');
 
   const [value, setValue] = useState('');

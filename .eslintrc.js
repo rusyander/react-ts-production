@@ -86,6 +86,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     '@typescript-eslint/consistent-type-imports': 'off',
     'react/display-name': 'off',
+    '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
   },
   globals: {
     __IS_DEV__: true,
