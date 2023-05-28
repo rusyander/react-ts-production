@@ -87,6 +87,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
+    '@typescript-eslint/no-dynamic-delete': 'warn',
   },
   globals: {
     __IS_DEV__: true,

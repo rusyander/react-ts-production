@@ -4,19 +4,21 @@ import cls from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { LoginActions } from 'features/AuthByUserName';
 import { getLoginForm } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
 import { Texts } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className }: LoginFormProps) => {
   const dispatch: any = useDispatch();
+  const store = useStore() as ReduxStoreWithManager;
   const { t } = useTranslation();
   const { isLoading, password, username, error } = useSelector(getLoginForm);
 
@@ -71,3 +73,5 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     </div>
   );
 });
+
+export default LoginForm;
