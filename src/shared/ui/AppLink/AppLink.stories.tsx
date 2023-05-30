@@ -1,8 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import AppLink, { AppLinkTheme } from './AppLink'
-import { BrowserRouter } from 'react-router-dom'
-// import { Theme } from 'app/providers/ThemeProvider';
+import AppLink, { AppLinkTheme } from './AppLink';
+import { BrowserRouter } from 'react-router-dom';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { Suspense } from 'react';
 
 const meta: Meta<typeof AppLink> = {
   title: 'shared/AppLink',
@@ -11,35 +13,41 @@ const meta: Meta<typeof AppLink> = {
 
   decorators: [
     (Story) => (
+      <Suspense fallback={''}>
         <BrowserRouter>
-                <Story />
-            </BrowserRouter>
-    )
+          <StoreProvider>
+            <ThemeProvider>
+              <Story />
+            </ThemeProvider>
+          </StoreProvider>
+        </BrowserRouter>
+      </Suspense>
+    ),
   ],
 
   args: {
-    to: '/'
-  }
-}
+    to: '/',
+  },
+};
 
-export default meta
-type Story = StoryObj<typeof AppLink>
+export default meta;
+type Story = StoryObj<typeof AppLink>;
 
 export const PRIMARY: Story = {
   args: {
     children: 'AppLink PRIMARY',
-    theme: AppLinkTheme.PRIMARY
-  }
-}
+    theme: AppLinkTheme.PRIMARY,
+  },
+};
 export const RED: Story = {
   args: {
     children: 'AppLink RED',
-    theme: AppLinkTheme.RED
-  }
-}
+    theme: AppLinkTheme.RED,
+  },
+};
 export const SECONDARY: Story = {
   args: {
     children: 'AppLink SECONDARY',
-    theme: AppLinkTheme.SECONDARY
-  }
-}
+    theme: AppLinkTheme.SECONDARY,
+  },
+};

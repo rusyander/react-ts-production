@@ -1,17 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Input } from './Input';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Input> = {
   title: 'shared/Input',
   component: Input,
   tags: ['autodocs'],
+  // decorators: [
+  //   (Story) => (
+  //     <div className={`'app' ${Theme.DARK}`}>
+  //       <Story />
+  //     </div>
+  //   ),
+  // ],
+
   decorators: [
     (Story) => (
-      <div className={`'app' ${Theme.DARK}`}>
-        <Story />
-      </div>
+      <Suspense fallback={''}>
+        <BrowserRouter>
+          <StoreProvider>
+            <ThemeProvider>
+              <Story />
+            </ThemeProvider>
+          </StoreProvider>
+        </BrowserRouter>
+      </Suspense>
     ),
   ],
 };

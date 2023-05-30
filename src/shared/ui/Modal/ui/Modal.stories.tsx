@@ -2,21 +2,28 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Modal } from './Modal';
 import { BrowserRouter } from 'react-router-dom';
-import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { Suspense } from 'react';
 
 const meta: Meta<typeof Modal> = {
   title: 'shared/Modal',
   component: Modal,
   tags: ['autodocs'],
 
-  //   decorators: [
-  //     (Story) => (
-  //       <BrowserRouter>
-  //         <Story />
-  //       </BrowserRouter>
-  //     ),
-  //   ],
+  decorators: [
+    (Story) => (
+      <Suspense fallback={''}>
+        <BrowserRouter>
+          <StoreProvider>
+            <ThemeProvider>
+              <Story />
+            </ThemeProvider>
+          </StoreProvider>
+        </BrowserRouter>
+      </Suspense>
+    ),
+  ],
 };
 
 export default meta;

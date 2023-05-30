@@ -1,6 +1,6 @@
 import { Country, Currency } from 'shared/const/common';
 
-export interface ProfileProps {
+export interface Profile {
   first: string;
   lastname: string;
   age: number;
@@ -12,7 +12,7 @@ export interface ProfileProps {
 }
 
 export interface ProfileSchema {
-  data?: ProfileProps;
+  data?: Profile;
   error?: string;
   isLoading: boolean;
   readonly: boolean;

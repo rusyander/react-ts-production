@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Navbar } from './Navbar';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreProvider } from 'app/providers/StoreProvider';
-import { Theme } from 'app/providers/ThemeProvider';
-// import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { Suspense } from 'react';
 
 const meta: Meta<typeof Navbar> = {
   title: 'shared/Navbar',
@@ -13,15 +13,28 @@ const meta: Meta<typeof Navbar> = {
 
   decorators: [
     (Story) => (
-      <StoreProvider>
+      <Suspense fallback={''}>
         <BrowserRouter>
-          <div className={`'app' ${Theme.DARK}`}>
-            <Story />
-          </div>
+          <StoreProvider>
+            <ThemeProvider>
+              <Story />
+            </ThemeProvider>
+          </StoreProvider>
         </BrowserRouter>
-      </StoreProvider>
+      </Suspense>
     ),
   ],
+  // decorators: [
+  //   (Story) => (
+  //     <StoreProvider>
+  //       <BrowserRouter>
+  //         <div className={`'app' ${Theme.DARK}`}>
+  //           <Story />
+  //         </div>
+  //       </BrowserRouter>
+  //     </StoreProvider>
+  //   ),
+  // ],
 };
 
 export default meta;

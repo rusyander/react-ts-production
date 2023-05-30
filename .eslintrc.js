@@ -88,9 +88,11 @@ module.exports = {
     'react/display-name': 'off',
     '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
     '@typescript-eslint/no-dynamic-delete': 'warn',
+    '@typescript-eslint/no-invalid-void-type': 'warn',
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   overrides: [
     {

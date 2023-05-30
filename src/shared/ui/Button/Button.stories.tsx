@@ -1,19 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button, SizeButton, ThemeButton } from './Button';
-import { Theme } from 'app/providers/ThemeProvider';
-
-const theme = 'dark';
+import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Button> = {
   title: 'shared/Button',
   component: Button,
   tags: ['autodocs'],
+  // decorators: [
+  //   (Story) => (
+  //     <div className={`'app' ${Theme.DARK}`}>
+  //       <Story />
+  //     </div>
+  //   ),
+  // ],
+
   decorators: [
     (Story) => (
-      <div className={`'app' ${Theme.DARK}`}>
-        <Story />
-      </div>
+      <Suspense fallback={''}>
+        <BrowserRouter>
+          <StoreProvider>
+            <ThemeProvider>
+              <Story />
+            </ThemeProvider>
+          </StoreProvider>
+        </BrowserRouter>
+      </Suspense>
     ),
   ],
 };

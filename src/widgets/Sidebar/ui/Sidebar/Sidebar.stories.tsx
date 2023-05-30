@@ -2,6 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Sidebar } from './Sidebar';
 import { BrowserRouter } from 'react-router-dom';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { Suspense } from 'react';
 
 const meta: Meta<typeof Sidebar> = {
   title: 'shared/Sidebar',
@@ -9,9 +12,15 @@ const meta: Meta<typeof Sidebar> = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <BrowserRouter>
-        <Story />
-      </BrowserRouter>
+      <Suspense fallback={''}>
+        <BrowserRouter>
+          <StoreProvider>
+            <ThemeProvider>
+              <Story />
+            </ThemeProvider>
+          </StoreProvider>
+        </BrowserRouter>
+      </Suspense>
     ),
   ],
 };
