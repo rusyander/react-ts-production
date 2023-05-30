@@ -30,7 +30,7 @@ const LoginSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         // state.password = action.payload.password;
-        state.username = action.payload.userName;
+        state.username = action.payload.username;
       })
       //   .addCase(loginByUserName.rejected, (state, action) => {
       //     state.isLoading = false;
@@ -46,6 +46,6 @@ const LoginSlice = createSlice({
 export const { actions: LoginActions } = LoginSlice;
 export const { reducer: LoginReducer } = LoginSlice;
 
-function asError (action: AnyAction) {
+function asError(action: AnyAction) {
   return action.type.endsWith('rejected');
 }

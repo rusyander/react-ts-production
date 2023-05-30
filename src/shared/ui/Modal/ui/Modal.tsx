@@ -5,6 +5,7 @@ import React, {
   useRef,
   useEffect,
   useCallback,
+  memo,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
@@ -21,13 +22,13 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-export const Modal: FC<ModalProps> = ({
+export const Modal = ({
   className = '',
   children,
   isOpen,
   onClose,
   lazy,
-}) => {
+}: ModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 

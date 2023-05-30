@@ -4,7 +4,7 @@ import cls from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
 import { Texts } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
@@ -20,17 +20,19 @@ import {
   DynamicModuleLoader,
   ReduserList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModalLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface LoginFormProps {
   className?: string;
+  onSuccess?: () => void;
 }
 
 const initialRedusers: ReduserList = {
   loginForm: LoginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
-  const dispatch: any = useDispatch();
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+  const dispatch = useAppDispatch();
 
   const { t } = useTranslation();
   // const { isLoading, password, username, error } = useSelector(getLoginForm);
@@ -53,9 +55,14 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     [dispatch]
   );
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUserName({ username, password }));
-  }, [dispatch, password, username]);
+  const onLoginClick = useCallback(async (): Promise<void> => {
+    const res = await dispatch(loginByUserName({ username, password }));
+    console.log(res);
+    if (res.meta.requestStatus === 'fulfilled') {
+      console.log('fulfilled');
+      onSuccess();
+    }
+  }, [dispatch, onSuccess, password, username]);
   return (
     <DynamicModuleLoader reducers={initialRedusers} removeAfterUnmaunt>
       <div className={classNames(cls.LoginForm, {}, [className])}>
@@ -82,6 +89,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
           value={password}
         />
         <Button
+          // eslint-disable-next-line @typescript-eslint/no-misused-promises
           onClick={onLoginClick}
           theme={ThemeButton.OUTLINE}
           className={cls.loginBtn}

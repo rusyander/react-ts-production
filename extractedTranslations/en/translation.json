@@ -1,4 +1,6 @@
 {
+  "profile": "profile",
+  "profilePage": "profilePage",
   "Введите username": "Введите username",
   "Введите пароль": "Введите пароль",
   "Войти": "Войти",

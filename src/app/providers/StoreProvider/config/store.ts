@@ -4,6 +4,7 @@ import { StateSchema } from './StateSchema';
 import { CounterReducer } from 'entities/Counter';
 import { UserReducer } from 'entities/User';
 import { createReducerManager } from './reduserManaget';
+import { ProfileReducer } from 'entities/Profile';
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -30,3 +31,5 @@ export function createReduxStore(
 
   return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

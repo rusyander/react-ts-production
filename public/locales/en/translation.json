@@ -11,5 +11,7 @@
   "Введите пароль": "Enter password",
   "Форма авторизации": "Authorization form",
   "Вы ввели неправельные данные": "You have entered incorrect data",
-  "Выйти": "Sing Out"
+  "Выйти": "Sing Out",
+  "profilePage": "Profile page",
+  "profile": "Profile"
 }
