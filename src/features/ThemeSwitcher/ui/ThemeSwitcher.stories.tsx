@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof ThemeSwitcher> = {
-  title: 'shared/ThemeSwitcher',
+  title: 'features/ThemeSwitcher',
   component: ThemeSwitcher,
   tags: ['autodocs'],
   decorators: [

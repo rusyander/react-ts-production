@@ -7,7 +7,7 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { Suspense } from 'react';
 
 const meta: Meta<typeof Sidebar> = {
-  title: 'shared/Sidebar',
+  title: 'widgets/Sidebar',
   component: Sidebar,
   tags: ['autodocs'],
   decorators: [

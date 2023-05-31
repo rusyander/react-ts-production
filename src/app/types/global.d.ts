@@ -6,6 +6,7 @@ declare module '*.scss' {
 
 declare module '*.svg' {
   import type React from 'react';
+  // import { DeepPartial } from '@reduxjs/toolkit';
   const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
   export default SVG;
 }
@@ -15,3 +16,7 @@ declare module '*.jpeg';
 
 declare const __IS_DEV__: boolean;
 declare const __API__: string;
+
+type DeepPartial<T> = {
+  [P in keyof T]?: DeepPartial<T[P]>;
+};

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import AppLink, { AppLinkTheme } from './AppLink';
+import AppLink from './AppLink';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
@@ -36,18 +36,18 @@ type Story = StoryObj<typeof AppLink>;
 export const PRIMARY: Story = {
   args: {
     children: 'AppLink PRIMARY',
-    theme: AppLinkTheme.PRIMARY,
+    theme: 'primary',
   },
 };
 export const RED: Story = {
   args: {
     children: 'AppLink RED',
-    theme: AppLinkTheme.RED,
+    theme: 'red',
   },
 };
 export const SECONDARY: Story = {
   args: {
     children: 'AppLink SECONDARY',
-    theme: AppLinkTheme.SECONDARY,
+    theme: 'secondary',
   },
 };

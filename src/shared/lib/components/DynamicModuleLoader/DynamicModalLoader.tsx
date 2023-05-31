@@ -25,23 +25,19 @@ export const DynamicModuleLoader: FC<DynamicModalLoaderProps> = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry) => {
-      store.reducerManager.add(name, reducer);
+    Object.entries(reducers).forEach(([name, reducer]) => {
+      store.reducerManager.add(name as StateSchemaKey, reducer);
       dispatch({ type: `@Init- ${name} reduser` });
     });
 
     return () => {
       if (removeAfterUnmaunt) {
-        Object.entries(reducers).forEach(
-          ([name, reducer]: ReducerListEntry) => {
-            store.reducerManager.remove(name);
-            dispatch({ type: `@Destroy- ${name} reduser` });
-          }
-        );
+        Object.entries(reducers).forEach(([name, reducer]) => {
+          store.reducerManager.remove(name as StateSchemaKey);
+          dispatch({ type: `@Destroy- ${name} reduser` });
+        });
       }
     };
-    // store.reducerManager.add('loginForm', LoginReducer);
-    // dispatch({ type: '@Init-loginForm/init' });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

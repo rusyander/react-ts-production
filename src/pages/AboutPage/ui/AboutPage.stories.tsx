@@ -5,7 +5,6 @@ import AboutPage from './AboutPage';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
-// import { Theme } from 'app/providers/ThemeProvider';
 
 const meta: Meta<typeof AboutPage> = {
   title: 'pages/AboutPage',

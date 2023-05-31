@@ -4,11 +4,12 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import MainIcon from 'shared/assets/icons/Main.svg';
 import AboutIcon from 'shared/assets/icons/About.svg';
 import ProfileIcon from 'shared/assets/icons/Profile.svg';
+import { To } from 'react-router-dom';
 
 export interface SidebarItemType {
   text: string;
   Icon: React.VFC<React.SVGProps<SVGSVGElement>>;
-  path: string;
+  path: string | null;
 }
 
 export const SidebarItemsList: SidebarItemType[] = [

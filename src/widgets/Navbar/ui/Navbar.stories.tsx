@@ -7,7 +7,7 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { Suspense } from 'react';
 
 const meta: Meta<typeof Navbar> = {
-  title: 'shared/Navbar',
+  title: 'widgets/Navbar',
   component: Navbar,
   tags: ['autodocs'],
 

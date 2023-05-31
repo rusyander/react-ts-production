@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Text, TextTheme } from './Text';
+import { Text } from './Text';
 import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { Suspense } from 'react';
@@ -76,12 +76,12 @@ TextsDark.decorators = [
 export const TextsPrimary: Story = {
   args: {
     text: 'text Primary',
-    theme: TextTheme.PRIMARY,
+    theme: 'primary',
   },
 };
 export const TextsError: Story = {
   args: {
     text: 'text Error',
-    theme: TextTheme.ERROR,
+    theme: 'error',
   },
 };

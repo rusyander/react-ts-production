@@ -2,12 +2,11 @@ import { useCallback, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
 import { Texts } from 'shared/ui/Text';
-import { TextTheme } from 'shared/ui/Text/ui/Text';
 import {
   LoginActions,
   LoginReducer,
@@ -35,7 +34,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const dispatch = useAppDispatch();
 
   const { t } = useTranslation();
-  // const { isLoading, password, username, error } = useSelector(getLoginForm);
 
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
@@ -60,7 +58,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     console.log(res);
     if (res.meta.requestStatus === 'fulfilled') {
       console.log('fulfilled');
-      onSuccess();
+      onSuccess?.();
     }
   }, [dispatch, onSuccess, password, username]);
   return (
@@ -68,10 +66,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Texts title={t('Форма авторизации')} />
         {error && (
-          <Texts
-            theme={TextTheme.ERROR}
-            text={t('Вы ввели неправельные данные')}
-          />
+          <Texts theme="error" text={t('Вы ввели неправельные данные')} />
         )}
         <Input
           type="text"
@@ -91,7 +86,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         <Button
           // eslint-disable-next-line @typescript-eslint/no-misused-promises
           onClick={onLoginClick}
-          theme={ThemeButton.OUTLINE}
+          theme="outline"
           className={cls.loginBtn}
           disabled={isLoading}
         >

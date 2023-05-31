@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ProfileCard.module.scss';
 
@@ -9,7 +9,7 @@ import { getProfileError } from 'entities/Profile/model/selectors/getProfileErro
 import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly';
 import { Texts } from 'shared/ui/Text';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 interface ProfileCardProps {
   className?: string;
@@ -27,7 +27,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     <div className={classNames(cls.ProfileCard, {}, [className])}>
       <div className={cls.header}>
         <Texts title={t('Профиль')} />
-        <Button className={cls.editBtn} theme={ThemeButton.OUTLINE}>
+        <Button className={cls.editBtn} theme="outline">
           {t('Редактировать')}
         </Button>
       </div>

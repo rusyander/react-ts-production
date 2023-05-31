@@ -1,10 +1,10 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getLoginError } from './getLoginError';
+import { LoginSchema } from '../../types/loginSchema';
 
 describe('getLoginError', () => {
   test('shod return error', () => {
-    const state: DeepPartial<StateSchema> = {
+    const state: DeepPartial<StateSchema | LoginSchema> = {
       loginForm: {
         error: 'error',
       },

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, SizeButton, ThemeButton } from './Button';
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { Button } from './Button';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
@@ -45,65 +45,65 @@ export const Primary: Story = {
 export const Clear: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.CLEAR,
+    theme: 'clear',
   },
 };
 
 export const ClearInverted: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.CLEAR_INVERT,
+    theme: 'clearInvert',
   },
 };
 
 export const Outline: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.OUTLINE,
+    theme: 'outline',
   },
 };
 
 export const OutlineSizeL: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.OUTLINE,
-    size: SizeButton.L,
+    theme: 'outline',
+    size: 'size_l',
   },
 };
 
 export const OutlineSizeM: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.OUTLINE,
-    size: SizeButton.M,
+    theme: 'outline',
+    size: 'size_m',
   },
 };
 
 export const OutlineSizeXL: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.OUTLINE,
-    size: SizeButton.XL,
+    theme: 'background',
+    size: 'size_xl',
   },
 };
 
 export const BackgroundTheme: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.BACKGROUND,
+    theme: 'background',
   },
 };
 
 export const BACKGROUND_INVERTED: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.BACKGROUND_INVERTED,
+    theme: 'backgroundInverted',
   },
 };
 export const Disabled: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.BACKGROUND_INVERTED,
+    theme: 'backgroundInverted',
     disabled: true,
   },
 };
@@ -111,7 +111,7 @@ export const Disabled: Story = {
 export const Square: Story = {
   args: {
     children: '>',
-    theme: ThemeButton.BACKGROUND_INVERTED,
+    theme: 'backgroundInverted',
     square: true,
   },
 };
@@ -119,26 +119,26 @@ export const Square: Story = {
 export const SquareSizeL: Story = {
   args: {
     children: '>',
-    theme: ThemeButton.BACKGROUND_INVERTED,
+    theme: 'backgroundInverted',
     square: true,
-    size: SizeButton.L,
+    size: 'size_l',
   },
 };
 
 export const SquareSizeM: Story = {
   args: {
     children: '>',
-    theme: ThemeButton.BACKGROUND_INVERTED,
+    theme: 'backgroundInverted',
     square: true,
-    size: SizeButton.M,
+    size: 'size_m',
   },
 };
 
 export const SquareSizeXL: Story = {
   args: {
     children: '>',
-    theme: ThemeButton.BACKGROUND_INVERTED,
+    theme: 'backgroundInverted',
     square: true,
-    size: SizeButton.XL,
+    size: 'size_xl',
   },
 };
