@@ -1,6 +1,7 @@
 import { AnyAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Profile, ProfileSchema } from '../types/profile';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const initialState: ProfileSchema = {
   isLoading: false,
@@ -12,7 +13,21 @@ const initialState: ProfileSchema = {
 const ProfileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: {},
+  reducers: {
+    setReadonly: (state, action: PayloadAction<boolean>) => {
+      state.readonly = action.payload;
+    },
+    cancelEdit: (state) => {
+      state.readonly = true;
+      state.form = state.data;
+    },
+    updateProfile: (state, action: PayloadAction<Profile>) => {
+      state.form = {
+        ...state.form,
+        ...action.payload,
+      };
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProfileData.pending, (state) => {
@@ -23,6 +38,18 @@ const ProfileSlice = createSlice({
         state.isLoading = false;
         state.error = undefined;
         state.data = action.payload;
+        state.form = action.payload;
+      })
+      .addCase(updateProfileData.pending, (state) => {
+        state.isLoading = true;
+        state.error = undefined;
+      })
+      .addCase(updateProfileData.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = undefined;
+        state.data = action.payload;
+        state.form = action.payload;
+        state.readonly = true;
       })
       .addMatcher(asError, (state, action: PayloadAction<string>) => {
         state.isLoading = false;
@@ -34,6 +61,6 @@ const ProfileSlice = createSlice({
 export const { actions: ProfileActions } = ProfileSlice;
 export const { reducer: ProfileReducer } = ProfileSlice;
 
-function asError (action: AnyAction) {
+function asError(action: AnyAction) {
   return action.type.endsWith('rejected');
 }

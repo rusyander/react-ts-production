@@ -91,6 +91,7 @@ module.exports = {
     '@typescript-eslint/no-invalid-void-type': 'warn',
     '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/ban-ts-comment': 'warn',
+    'multiline-ternary': 'off',
   },
   globals: {
     __IS_DEV__: true,

@@ -2,15 +2,23 @@
   padding: 20px;
   border: 2px solid var(--invert-bg-color);
 }
-.header {
-  display: flex;
-}
-.editBtn {
-  margin-left: auto;
-}
-.data {
-  margin-top: 30px;
-}
+
 .input {
   margin-top: 10px;
+}
+.loading,
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.editing {
+  border: 2px solid var(--invert-primary-color);
 }
