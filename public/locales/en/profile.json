@@ -12,5 +12,10 @@
   "Ваш никнейм": "Your nickname",
   "Ваша аватарка": "Your avatar",
   "Укажите страну": "Select the country",
-  "Укажите валюту": "Select the currency"
+  "Укажите валюту": "Select the currency",
+  "Ошибка сервера": "Server error",
+  "Некоректный возраст": "Incorrect age",
+  "Некоректный регион": "Incorrect region",
+  "Имя и фамилия обязательны к заполнению": "Name and surname are required",
+  "Данные не указаны": "Data not specified"
 }

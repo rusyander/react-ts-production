@@ -5,7 +5,7 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Image from './storybook.jpg';
+import ImageAvatar from '../../assets//test/avatar.jpg';
 
 const meta: Meta<typeof Avatar> = {
   title: 'shared/Avatar',
@@ -39,14 +39,14 @@ type Story = StoryObj<typeof Avatar>;
 
 export const Primary: Story = {
   args: {
-    src: Image,
+    src: ImageAvatar,
     size: 150,
   },
 };
 
 export const Small: Story = {
   args: {
-    src: Image,
+    src: ImageAvatar,
     size: 50,
   },
 };

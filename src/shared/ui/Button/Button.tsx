@@ -5,12 +5,12 @@ import cls from './Button.module.scss';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?:
-    | 'clear'
-    | 'clearInvert'
-    | 'outline'
-    | 'outline_red'
-    | 'background'
-    | 'backgroundInverted';
+  | 'clear'
+  | 'clearInvert'
+  | 'outline'
+  | 'outline_red'
+  | 'background'
+  | 'backgroundInverted';
   square?: boolean;
   size?: 'size_l' | 'size_m' | 'size_xl';
   disabled?: boolean;

@@ -20,7 +20,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
   className,
 }) => {
   const dispatch = useAppDispatch();
-  const { t } = useTranslation();
+  const { t } = useTranslation('profile');
   const readonly = useSelector(getProfileReadonly);
 
   const hasEdit = useCallback(() => {
