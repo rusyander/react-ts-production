@@ -25,7 +25,9 @@ export const Select = memo(
     onChange,
     readonly,
   }: SelectProps) => {
-    const mods: Mods = {};
+    const mods: Mods = {
+      [cls.readonly]: readonly,
+    };
 
     const onChangeHandler = useCallback(
       (e: ChangeEvent<HTMLSelectElement>) => {

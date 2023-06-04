@@ -1,8 +1,8 @@
-@import "reset";
-@import "variables/globals";
-@import "themes/dark";
-@import "themes/normals";
-
+@import 'reset';
+@import 'variables/globals';
+@import 'themes/dark';
+@import 'themes/normals';
+@import './themes//orange';
 body {
   font: var(--font-m);
   color: var(--primary-color);
