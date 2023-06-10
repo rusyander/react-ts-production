@@ -1,18 +1,15 @@
-
-
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { [FTName] } from './[FTName]';
+import { ArticleTextBlockComponent } from './ArticleTextBlockComponent';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { StoreProvider } from 'app/providers/StoreProvider';
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-const meta: Meta<typeof [FTName]> = {
-   title: 'shared/[FTName]',
-   component: [FTName],
+const meta: Meta<typeof ArticleTextBlockComponent> = {
+  title: 'entities/ArticleTextBlockComponent',
+  component: ArticleTextBlockComponent,
   tags: ['autodocs'],
-
 
   decorators: [
     (Story) => (
@@ -20,9 +17,7 @@ const meta: Meta<typeof [FTName]> = {
         <BrowserRouter>
           <StoreProvider>
             <ThemeProvider>
-            <div className={`'app' ${Theme.DARK}`}>
-                <Story />
-              </div>
+              <Story />
             </ThemeProvider>
           </StoreProvider>
         </BrowserRouter>
@@ -32,8 +27,8 @@ const meta: Meta<typeof [FTName]> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof [FTName]>;
+type Story = StoryObj<typeof ArticleTextBlockComponent>;
 
 export const Primary: Story = {
-   args:{}
+  args: {},
 };

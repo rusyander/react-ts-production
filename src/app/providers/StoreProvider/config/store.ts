@@ -11,8 +11,9 @@ import { UserReducer } from 'entities/User';
 import { createReducerManager } from './reduserManaget';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
+import { ArticleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 
-export function createReduxStore (
+export function createReduxStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
   navigate?: (to: To, options?: NavigateOptions) => void
@@ -23,6 +24,7 @@ export function createReduxStore (
     user: UserReducer,
 
     // loginForm: LoginReducer,
+    // articleDetails: ArticleDetailsReducer,
   };
 
   const reducerManager = createReducerManager(rootReduser);
