@@ -40,11 +40,4 @@ export const SidebarItemsList: SidebarItemType[] = [
     text: 'Статьи',
     authOnly: true,
   },
-
-  {
-    path: RoutePath.article_details,
-    Icon: ArticleIcon,
-    text: 'Статьи Детали',
-    authOnly: true,
-  },
 ];

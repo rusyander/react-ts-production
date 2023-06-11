@@ -73,6 +73,20 @@ TextsDark.decorators = [
   ),
 ];
 
+export const TextM: Story = {
+  args: {
+    text: 'text TEXT',
+    size: 'sizeM',
+  },
+};
+
+export const TextsL: Story = {
+  args: {
+    text: 'text TEXT',
+    size: 'sizeL',
+  },
+};
+
 export const TextsPrimary: Story = {
   args: {
     text: 'text Primary',

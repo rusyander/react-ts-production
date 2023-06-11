@@ -8,6 +8,7 @@ interface TextProps {
   text?: string;
   theme?: 'primary' | 'error';
   align?: 'left' | 'center' | 'right';
+  size?: 'sizeM' | 'sizeL';
 }
 
 export const Text: FC<TextProps> = memo(
@@ -17,10 +18,12 @@ export const Text: FC<TextProps> = memo(
     text,
     theme = 'primary',
     align = 'left',
+    size = 'sizeM',
   }: TextProps) => {
     const mods: Mods = {
       [cls[theme]]: true,
       [cls[align]]: true,
+      [cls[size]]: true,
     };
     return (
       <div className={classNames(cls.Text, mods, [className])}>

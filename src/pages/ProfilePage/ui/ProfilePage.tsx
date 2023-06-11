@@ -3,7 +3,7 @@ import { FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   DynamicModuleLoader,
-  ReduserList,
+  ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModalLoader';
 import {
   ProfileActions,
@@ -24,7 +24,7 @@ import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Texts } from 'shared/ui/Text';
-const redusers: ReduserList = {
+const redusers: ReducersList = {
   profile: ProfileReducer,
 };
 

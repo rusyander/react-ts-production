@@ -92,6 +92,8 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/ban-ts-comment': 'warn',
     'multiline-ternary': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    'quote-props': 'off',
   },
   globals: {
     __IS_DEV__: true,
