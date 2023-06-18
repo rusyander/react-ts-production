@@ -55,7 +55,7 @@ module.exports = {
       'error',
       {
         ignoreComments: true,
-        code: 120,
+        code: 130,
       },
     ],
     indent: 'warn',
@@ -94,6 +94,7 @@ module.exports = {
     'multiline-ternary': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     'quote-props': 'off',
+    'jsx-props-no-spreading': 'off',
   },
   globals: {
     __IS_DEV__: true,

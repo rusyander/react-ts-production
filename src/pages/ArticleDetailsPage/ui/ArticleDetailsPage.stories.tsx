@@ -36,6 +36,11 @@ const articlesData: any = {
   views: 1022,
   createdAt: '26.02.2022',
   type: ['IT'],
+  user: {
+    id: '1',
+    username: 'admin',
+    avatar: 'https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg',
+  },
   blocks: [
     {
       id: '1',

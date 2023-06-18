@@ -13,6 +13,7 @@ const data = {
   avatar: 'test',
   currency: 'RUB' as Currency,
   country: 'Russia' as Country,
+  id: '1',
 };
 describe('ProfileSlice', () => {
   test('test set readonly', () => {

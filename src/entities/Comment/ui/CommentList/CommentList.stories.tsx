@@ -33,7 +33,34 @@ export default meta;
 type Story = StoryObj<typeof CommentList>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    comments: [
+      {
+        id: '1',
+        text: 'text1',
+        user: {
+          id: '1',
+          username: 'name1',
+        },
+      },
+      {
+        id: '2',
+        text: 'tex2t',
+        user: {
+          id: '1',
+          username: 'name2',
+        },
+      },
+      {
+        id: '3',
+        text: 'text3',
+        user: {
+          id: '1',
+          username: 'name3',
+        },
+      },
+    ],
+  },
 };
 
 Primary.decorators = [
@@ -44,9 +71,26 @@ Primary.decorators = [
       </div>
     </ThemeProvider>
   ),
-  // StoreDecorator({
-  //   articleDetails: {
-  //     data: {},
-  //   },
-  // }),
+  StoreDecorator({
+    articleDetailsComments: {
+      entities: {
+        1: {
+          id: '1',
+          text: 'text',
+          user: {
+            id: '1',
+            username: 'name',
+          },
+        },
+        2: {
+          id: '2',
+          text: 'text',
+          user: {
+            id: '1',
+            username: 'name',
+          },
+        },
+      },
+    },
+  }),
 ];

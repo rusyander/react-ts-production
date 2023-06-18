@@ -33,7 +33,16 @@ export default meta;
 type Story = StoryObj<typeof CommentCard>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    comment: {
+      id: '1',
+      text: 'text1',
+      user: {
+        id: '1',
+        username: 'name1',
+      },
+    },
+  },
 };
 
 Primary.decorators = [
@@ -50,3 +59,9 @@ Primary.decorators = [
   //   },
   // }),
 ];
+
+export const PrimaryLoading: Story = {
+  args: {
+    isLoading: true,
+  },
+};
