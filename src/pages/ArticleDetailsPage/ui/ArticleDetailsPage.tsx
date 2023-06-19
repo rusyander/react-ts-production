@@ -25,6 +25,7 @@ import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArtic
 import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { Button } from 'shared/ui/Button/Button';
+import { Page } from 'shared/ui/Page/Page';
 
 const redusers: ReducersList = {
   articleDetailsComments: ArticleDetailCommentsReducer,
@@ -55,23 +56,25 @@ function ArticleDetailsPage() {
 
   if (!id) {
     return (
-      <div>
+      <Page>
         <h1>{t('Статья не найдена')}</h1>
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={redusers} removeAfterUnmaunt={true}>
-      <div>
-        <Button onClick={backToList} theme="outline">
-          {t('Назад')}
-        </Button>
-        <ArticleDetails id={id} />
-        <Texts className={cls.title} title={t('Коментарии')} />
-        <AddCommentForm onSendComments={onSendComment} />
-        <CommentList comments={comments} isLoading={isLoading} />
-      </div>
+      <Page>
+        <div>
+          <Button onClick={backToList} theme="outline">
+            {t('Назад')}
+          </Button>
+          <ArticleDetails id={id} />
+          <Texts className={cls.title} title={t('Коментарии')} />
+          <AddCommentForm onSendComments={onSendComment} />
+          <CommentList comments={comments} isLoading={isLoading} />
+        </div>
+      </Page>
     </DynamicModuleLoader>
   );
 }

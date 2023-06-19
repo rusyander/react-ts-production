@@ -5,4 +5,9 @@ export interface ArticlePageSchema extends EntityState<Article> {
   isLoading?: boolean;
   error?: string | undefined;
   view?: 'SMALL' | 'BIG';
+
+  // paginations
+  page?: number;
+  limit?: number;
+  hasMore?: boolean;
 }

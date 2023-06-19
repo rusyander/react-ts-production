@@ -95,6 +95,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     'quote-props': 'off',
     'jsx-props-no-spreading': 'off',
+    '@typescript-eslint/restrict-plus-operands': 'warn',
   },
   globals: {
     __IS_DEV__: true,
