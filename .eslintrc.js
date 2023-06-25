@@ -96,6 +96,7 @@ module.exports = {
     'quote-props': 'off',
     'jsx-props-no-spreading': 'off',
     '@typescript-eslint/restrict-plus-operands': 'warn',
+    'n/no-callback-literal': 'off',
   },
   globals: {
     __IS_DEV__: true,

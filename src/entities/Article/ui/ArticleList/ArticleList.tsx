@@ -5,6 +5,7 @@ import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { Texts } from 'shared/ui/Text';
 
 interface ArticleListProps {
   className?: string;
@@ -32,6 +33,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
             className={cls.card}
           />
         ))}
+      </div>
+    );
+  }
+
+  if (!isLoading && article.length === 0) {
+    return (
+      <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+        <Texts size="sizeL" text={t('Статьи не найдены')} />
       </div>
     );
   }

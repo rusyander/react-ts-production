@@ -5,13 +5,17 @@ import cls from './Card.module.scss';
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children?: React.ReactNode;
+  theme?: 'normal' | 'outlined';
 }
 
 export const Card = memo((props: CardProps) => {
-  const { className, children, ...otherProps } = props;
+  const { className, children, theme = 'normal', ...otherProps } = props;
 
   return (
-    <div {...otherProps} className={classNames(cls.card, {}, [className])}>
+    <div
+      {...otherProps}
+      className={classNames(cls.card, {}, [className, cls[theme]])}
+    >
       {children}
     </div>
   );

@@ -9,21 +9,21 @@ import {
   ArticlePageSliceActions,
   ArticlePageSliceReducer,
   getArticles,
-} from '../model/slice/articlePageSlice';
+} from '../../model/slice/articlePageSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchArticleList } from '../model/services/fetchArticleList/fetchArticleList';
 import { useSelector } from 'react-redux';
 import {
   articlesPageIsLoading,
   articlesPageError,
   articlesPageView,
-  articlesPagePageCount,
-  articlesPageHasMore,
-} from '../model/selectors/articlesPageSelectors';
-import { Page } from 'shared/ui/Page/Page';
-import { log } from 'console';
-import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
+} from '../../model/selectors/articlesPageSelectors';
+import { Page } from 'widgets/Page/Page';
+import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
+import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+import cls from './ArticlePage.module.scss';
+import { useSearchParams } from 'react-router-dom';
 
 const reducers: ReducersList = {
   articlesPage: ArticlePageSliceReducer,
@@ -37,25 +37,14 @@ function ArticlePage() {
   const isLoading = useSelector(articlesPageIsLoading);
   const isError = useSelector(articlesPageError);
   const views = useSelector(articlesPageView);
-
-  const onChangeViews = useCallback(
-    (view: 'SMALL' | 'BIG') => {
-      dispatch(ArticlePageSliceActions.setView(view));
-    },
-    [dispatch]
-  );
+  const [searchParams] = useSearchParams();
 
   const onLoadNextPage = useCallback(() => {
     dispatch(fetchNextArticlePage());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(ArticlePageSliceActions.initialState());
-    dispatch(
-      fetchArticleList({
-        page: 1,
-      })
-    );
+    dispatch(initArticlePage(searchParams));
   });
 
   if (isError) {
@@ -67,10 +56,10 @@ function ArticlePage() {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmaunt={false}>
       <Page onScrollEnd={onLoadNextPage}>
         <div>
-          <ArticleViewSections view={views} onViewClick={onChangeViews} />
+          <ArticlePageFilters />
           <ArticleList
             view={views}
             isLoading={isLoading}
@@ -78,6 +67,7 @@ function ArticlePage() {
             //   return { ...item, id: index.toString() };
             // })}
             article={articles}
+            className={cls.list}
           />
         </div>
       </Page>

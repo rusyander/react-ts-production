@@ -12,16 +12,18 @@ import { createReducerManager } from './reduserManaget';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
+import { UISliceReducer } from 'features/Ui';
 
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void
+  asyncReducers?: ReducersMapObject<StateSchema>
+  // navigate?: (to: To, options?: NavigateOptions) => void
 ) {
   const rootReduser: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: CounterReducer,
     user: UserReducer,
+    ui: UISliceReducer,
 
     // loginForm: LoginReducer,
     // articleDetails: ArticleDetailsReducer,
@@ -31,7 +33,7 @@ export function createReduxStore(
 
   const extraArh: ThunkExtraArg = {
     api: $api,
-    navigate,
+    // navigate,
   };
 
   const store = configureStore({

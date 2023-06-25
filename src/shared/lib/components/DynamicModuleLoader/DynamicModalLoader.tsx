@@ -19,9 +19,12 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap();
     Object.entries(reducers).forEach(([name, reducer]) => {
-      store.reducerManager.add(name as StateSchemaKey, reducer);
-      dispatch({ type: `@Init- ${name} reduser` });
+      if (!mountedReducers[name as StateSchemaKey]) {
+        store.reducerManager.add(name as StateSchemaKey, reducer);
+        dispatch({ type: `@Init- ${name} reduser` });
+      }
     });
 
     return () => {

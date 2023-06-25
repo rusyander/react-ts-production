@@ -28,12 +28,14 @@ export interface ArticleTextBlock extends ArticleBlockBase {
   paragraphs: string[];
 }
 
+export type ArticleSortFields = 'views' | 'title' | 'createdAt';
+
 export type ArticleBlock =
   | ArticleCodeBlock
   | ArticleImageBlock
   | ArticleTextBlock;
 
-export type ArticleType = 'IT' | 'SCIENCE' | 'ECONOMICS';
+export type ArticleType = 'IT' | 'SCIENCE' | 'ECONOMICS' | 'ALL';
 
 export interface Article {
   id: string;

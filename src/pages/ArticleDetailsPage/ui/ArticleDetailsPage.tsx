@@ -25,7 +25,7 @@ import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArtic
 import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { Button } from 'shared/ui/Button/Button';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 
 const redusers: ReducersList = {
   articleDetailsComments: ArticleDetailCommentsReducer,

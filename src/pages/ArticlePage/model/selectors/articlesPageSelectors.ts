@@ -13,3 +13,15 @@ export const articlesPageLimit = (state: StateSchema) =>
   state.articlesPage?.limit || 10;
 export const articlesPageHasMore = (state: StateSchema) =>
   state.articlesPage?.hasMore || false;
+export const articlesPageInited = (state: StateSchema) =>
+  state.articlesPage?._inited || false;
+
+export const articlesPageOrder = (state: StateSchema) =>
+  state.articlesPage?.order || 'asc';
+export const articlesPageSort = (state: StateSchema) =>
+  state.articlesPage?.sort || 'createdAt';
+export const articlesPageSearch = (state: StateSchema) =>
+  state.articlesPage?.search || '';
+
+export const articlesPageType = (state: StateSchema) =>
+  state.articlesPage?.type || 'ALL';
