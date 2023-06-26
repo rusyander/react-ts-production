@@ -6,7 +6,7 @@ interface TextProps {
   className?: string;
   title?: string;
   text?: string;
-  theme?: 'primary' | 'error';
+  theme?: 'primary' | 'error' | 'inverted';
   align?: 'left' | 'center' | 'right';
   size?: 'sizeM' | 'sizeL';
 }

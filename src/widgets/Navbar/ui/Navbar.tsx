@@ -6,6 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUserName';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserActions, getUserAuthData } from 'entities/User';
+import { Texts } from 'shared/ui/Text';
+import AppLink from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface NavbarProps {
   className?: string;
@@ -32,6 +35,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.navbar, {}, [className])}>
+        <div className={cls.flex}>
+          <Texts theme="inverted" className={cls.AppName} title={t('Blog')} />
+          <AppLink
+            theme="secondary"
+            to={RoutePath.article_create}
+            className={cls.createBtn}
+          >
+            {t('Создать статью')}
+          </AppLink>
+        </div>
         <Button theme="clearInvert" onClick={onLogout}>
           {t('Выйти')}
         </Button>
@@ -41,6 +54,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   return (
     <header className={classNames(cls.navbar, {}, [className])}>
+      <Texts className={cls.AppName} title={t('Blog')} />
+
       <Button theme="clearInvert" onClick={onOpenModal}>
         {t('Войти')}
       </Button>

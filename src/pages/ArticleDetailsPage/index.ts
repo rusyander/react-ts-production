@@ -1,4 +1,4 @@
-export { ArticleDetailsPageAsync as ArticleDetailsPage } from './ui/ArticleDetailsPage.async';
+export { ArticleDetailsPageAsync as ArticleDetailsPage } from './ui/ArticleDetailsPage/ArticleDetailsPage.async';
 export type { ArticleDetailsPageComponentSchema } from './model/types/articleDetailsPageComponentSchema';
 export {
   ArticleDetailsPageRecommendationsReducer,
@@ -7,3 +7,4 @@ export {
 export type { ArticleDetailsRecommendationSchema } from './model/types/articleDetailsRecommendationSchema';
 export type { ArticleDetailsPageSchema } from './model/types/index';
 export { articleDetailsPageReduser } from './model/slice/index';
+export { getCanEditArticle } from './model/selectors/article';
