@@ -1,4 +1,4 @@
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import cls from './ArticleDetailsPage.module.scss';
 
@@ -10,10 +10,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModalLoader';
-import {
-  ArticleDetailCommentsReducer,
-  getArticleComments,
-} from '../model/slice/articleDetailCommentsSlice';
+import { getArticleComments } from '../model/slice/articleDetailCommentsSlice';
 import { useSelector } from 'react-redux';
 import {
   getArticleCommentsIsLoading,
@@ -26,9 +23,17 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { Button } from 'shared/ui/Button/Button';
 import { Page } from 'widgets/Page/Page';
+import { getArticleRecommendations } from '../model/slice/articleDetailsPageRecommendationsSlice';
+import {
+  getArticleRecommendationIsLoading,
+  getArticleRecommendationError,
+} from '../model/selectors/recomendation';
+import { fetchArticleRecomendations } from '../model/services/fetchArticleRecomendations/fetchArticleRecomendations';
+import { articleDetailsPageReduser } from '../model/slice';
 
 const redusers: ReducersList = {
-  articleDetailsComments: ArticleDetailCommentsReducer,
+  articleDetailsPage: articleDetailsPageReduser,
+  // articleDetailsPageRecommendations: ArticleDetailsPageRecommendationsReducer,
 };
 
 function ArticleDetailsPage() {
@@ -38,6 +43,12 @@ function ArticleDetailsPage() {
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleCommentsIsLoading);
   const error = useSelector(getArticleCommentsError);
+
+  const recommendations = useSelector(getArticleRecommendations.selectAll);
+  const isLoadingRecommendation = useSelector(
+    getArticleRecommendationIsLoading
+  );
+  const errorRecommendation = useSelector(getArticleRecommendationError);
 
   const backToList = useCallback(() => {
     window.history.back();
@@ -52,6 +63,7 @@ function ArticleDetailsPage() {
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(String(id)));
+    dispatch(fetchArticleRecomendations());
   });
 
   if (!id) {
@@ -70,7 +82,14 @@ function ArticleDetailsPage() {
             {t('Назад')}
           </Button>
           <ArticleDetails id={id} />
-          <Texts className={cls.title} title={t('Коментарии')} />
+          <Texts size="sizeL" className={cls.title} title={t('Рекомендуем')} />
+          <ArticleList
+            className={cls.recommendations}
+            article={recommendations}
+            isLoading={isLoadingRecommendation}
+            target="_blank"
+          />
+          <Texts size="sizeL" className={cls.title} title={t('Коментарии')} />
           <AddCommentForm onSendComments={onSendComment} />
           <CommentList comments={comments} isLoading={isLoading} />
         </div>

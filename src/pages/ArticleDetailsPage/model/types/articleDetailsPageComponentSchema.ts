@@ -5,7 +5,4 @@ export interface ArticleDetailsPageComponentSchema
   extends EntityState<Comments> {
   isLoading?: boolean;
   error?: string;
-  //   data?: Comments[];
-  //   ids: string[];
-  //   entities: Record<string, Comments>;
 }

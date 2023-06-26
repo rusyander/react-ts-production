@@ -72,22 +72,24 @@ Primary.decorators = [
     </ThemeProvider>
   ),
   StoreDecorator({
-    articleDetailsComments: {
-      entities: {
-        1: {
-          id: '1',
-          text: 'text',
-          user: {
+    articleDetailsPage: {
+      articleDetailsComments: {
+        entities: {
+          1: {
             id: '1',
-            username: 'name',
+            text: 'text',
+            user: {
+              id: '1',
+              username: 'name',
+            },
           },
-        },
-        2: {
-          id: '2',
-          text: 'text',
-          user: {
-            id: '1',
-            username: 'name',
+          2: {
+            id: '2',
+            text: 'text',
+            user: {
+              id: '1',
+              username: 'name',
+            },
           },
         },
       },
