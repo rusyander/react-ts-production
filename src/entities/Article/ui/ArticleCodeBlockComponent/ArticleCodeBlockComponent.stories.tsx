@@ -5,7 +5,7 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ArticleBlockType } from 'entities/Article/model/types/article';
+import { ArticleBlockType } from '../../model/types/article';
 
 const meta: Meta<typeof ArticleCodeBlockComponent> = {
   title: 'entities/ArticleCodeBlockComponent',

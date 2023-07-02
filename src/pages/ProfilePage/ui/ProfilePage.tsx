@@ -27,6 +27,7 @@ import { Texts } from 'shared/ui/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack';
 const redusers: ReducersList = {
   profile: ProfileReducer,
 };
@@ -125,7 +126,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   return (
     <DynamicModuleLoader reducers={redusers} removeAfterUnmaunt>
       <Page>
-        <div>
+        <VStack gap="16" max={true}>
           <ProfilePageHeader />
           {validateErrors?.length &&
             validateErrors.map((error) => (
@@ -149,7 +150,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
             onChangeCurrency={onChangeCurrency}
             onChangeCountry={onChangeCountry}
           />
-        </div>
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

@@ -1,6 +1,5 @@
 import React, { FC, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ProfilePageHeader.module.scss';
 
 import { useTranslation } from 'react-i18next';
 import { Texts } from 'shared/ui/Text';
@@ -15,6 +14,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
 import { useParams } from 'react-router-dom';
+import { HStack } from 'shared/ui/Stack';
 interface ProfilePageHeaderProps {
   className?: string;
 }
@@ -45,30 +45,30 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
   }, [dispatch, id]);
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack
+      max
+      justify="between"
+      className={classNames('max', {}, [className])}
+    >
       <Texts title={t('Профиль')} />
       {readonly && authData?.id === profileData?.id ? (
-        <Button onClick={hasEdit} className={cls.editBtn} theme="outline">
+        <Button onClick={hasEdit} theme="outline">
           {t('Редактировать')}
         </Button>
       ) : (
         <>
           {authData?.id === profileData?.id && (
-            <>
-              <Button
-                onClick={onCancelEdit}
-                className={cls.editBtn}
-                theme="outline_red"
-              >
+            <HStack gap="8">
+              <Button onClick={onCancelEdit} theme="outline_red">
                 {t('Отменить')}
               </Button>
-              <Button onClick={onSave} className={cls.saveBtn} theme="outline">
+              <Button onClick={onSave} theme="outline">
                 {t('Сохранить')}
               </Button>{' '}
-            </>
+            </HStack>
           )}
         </>
       )}
-    </div>
+    </HStack>
   );
 };

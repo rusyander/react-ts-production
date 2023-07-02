@@ -1,4 +1,4 @@
-import { ArticleList, ArticleViewSections } from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -6,7 +6,6 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModalLoader';
 import {
-  ArticlePageSliceActions,
   ArticlePageSliceReducer,
   getArticles,
 } from '../../model/slice/articlePageSlice';

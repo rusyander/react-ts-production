@@ -6,7 +6,7 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreDecorator } from 'shared/config/storybook/storeDecorator/StoreDecorator';
-import { ArticleBlockType } from 'entities/Article/model/types/article';
+import { ArticleBlockType } from '../../model/types/article';
 
 const meta: Meta<typeof ArticleDetails> = {
   title: 'entities/ArticleDetails',

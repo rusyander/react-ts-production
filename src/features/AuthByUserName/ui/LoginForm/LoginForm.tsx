@@ -7,10 +7,7 @@ import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
 import { Texts } from 'shared/ui/Text';
-import {
-  LoginActions,
-  LoginReducer,
-} from 'features/AuthByUserName/model/slice/loginSlice';
+import { LoginActions, LoginReducer } from '../../model/slice/loginSlice';
 import { getLoginUsername } from '../../model/selectors/getLoginUserName/getLoginUserName';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';

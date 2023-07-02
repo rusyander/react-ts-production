@@ -18,6 +18,7 @@ import {
   addComentFormSelectorsError,
 } from '../../model/selectors/addComentFormSelectors';
 import { useSelector } from 'react-redux';
+import { HStack } from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
   className?: string;
@@ -58,14 +59,18 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmaunt={true}>
-      <div className={classNames(cls.addCommentForm, {}, [className])}>
+      <HStack
+        justify="between"
+        max
+        className={classNames(cls.addCommentForm, {}, [className])}
+      >
         <Input
           className={cls.input}
           onChange={onCommentTextChange}
           placeholder={t('Введите текст коментарий')}
         />
         <Button onClick={onSendHandler}>{t('Отправить')}</Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 });

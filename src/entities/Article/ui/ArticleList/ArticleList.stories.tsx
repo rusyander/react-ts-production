@@ -5,10 +5,7 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import {
-  Article,
-  ArticleBlockType,
-} from 'entities/Article/model/types/article';
+import { Article, ArticleBlockType } from '../../model/types/article';
 
 const meta: Meta<typeof ArticleList> = {
   title: 'entities/ArticleList',

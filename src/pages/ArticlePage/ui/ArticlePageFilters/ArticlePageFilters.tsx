@@ -9,15 +9,15 @@ import {
   articlesPageSort,
   articlesPageType,
   articlesPageView,
-} from 'pages/ArticlePage/model/selectors/articlesPageSelectors';
-import { ArticlePageSliceActions } from 'pages/ArticlePage/model/slice/articlePageSlice';
+} from '../../model/selectors/articlesPageSelectors';
+import { ArticlePageSliceActions } from '../../model/slice/articlePageSlice';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import { ArticleSortSelector } from 'features/ArticleSortSelector/ArticleSortSelector';
 import { SortOrder } from 'shared/types';
-import { fetchArticleList } from 'pages/ArticlePage/model/services/fetchArticleList/fetchArticleList';
+import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 import { ArticleType } from 'entities/Article/model/types/article';

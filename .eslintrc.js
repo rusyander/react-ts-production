@@ -19,7 +19,13 @@ module.exports = {
     project: './tsconfig.json',
   },
 
-  plugins: ['react', 'react-hooks', 'i18next', '@typescript-eslint'],
+  plugins: [
+    'react',
+    'react-hooks',
+    'i18next',
+    '@typescript-eslint',
+    'rustam-plugin-fsd-elsint',
+  ],
   rules: {
     'react/jsx-indent': [0, 2],
     'react/jsx-indent-props': [0, 2],
@@ -97,6 +103,9 @@ module.exports = {
     'jsx-props-no-spreading': 'off',
     '@typescript-eslint/restrict-plus-operands': 'warn',
     'n/no-callback-literal': 'off',
+    'rustam-plugin-fsd-elsint/path-checker': 'error',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'storybook/prefer-pascal-case': 'off',
   },
   globals: {
     __IS_DEV__: true,

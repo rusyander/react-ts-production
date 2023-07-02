@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import AppLink from 'shared/ui/AppLink/AppLink';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
-import { SidebarItemType } from 'widgets/Sidebar/model/types/sidebar';
+import { SidebarItemType } from '../../model/types/sidebar';
 interface SidebarItemProps {
   item?: SidebarItemType;
   collapsed?: boolean;
