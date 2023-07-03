@@ -33,7 +33,29 @@ export default meta;
 type Story = StoryObj<typeof ListBox>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    items: [
+      {
+        content: 'Item 1',
+        value: 'Item 1',
+      },
+      {
+        content: 'Item 2',
+        value: 'Item 2',
+      },
+      {
+        content: 'Item 3',
+        value: 'Item 3',
+      },
+      {
+        content: 'Item 4',
+        value: 'Item 4',
+      },
+    ],
+    defaultValue: 'Item 1',
+    value: 'Item 1',
+    direction: 'top left',
+  },
 };
 
 Primary.decorators = [
@@ -50,3 +72,79 @@ Primary.decorators = [
   //   },
   // }),
 ];
+
+export const TopRight: Story = {
+  args: {
+    items: [
+      {
+        content: 'Item 1',
+        value: 'Item 1',
+      },
+      {
+        content: 'Item 2',
+        value: 'Item 2',
+      },
+      {
+        content: 'Item 3',
+        value: 'Item 3',
+      },
+      {
+        content: 'Item 4',
+        value: 'Item 4',
+      },
+    ],
+    defaultValue: 'Item 1',
+    value: 'Item 1',
+    direction: 'top right',
+  },
+};
+export const BottomLeft: Story = {
+  args: {
+    items: [
+      {
+        content: 'Item 1',
+        value: 'Item 1',
+      },
+      {
+        content: 'Item 2',
+        value: 'Item 2',
+      },
+      {
+        content: 'Item 3',
+        value: 'Item 3',
+      },
+      {
+        content: 'Item 4',
+        value: 'Item 4',
+      },
+    ],
+    defaultValue: 'Item 1',
+    value: 'Item 1',
+    direction: 'bottom left',
+  },
+};
+export const BottomRight: Story = {
+  args: {
+    items: [
+      {
+        content: 'Item 1',
+        value: 'Item 1',
+      },
+      {
+        content: 'Item 2',
+        value: 'Item 2',
+      },
+      {
+        content: 'Item 3',
+        value: 'Item 3',
+      },
+      {
+        content: 'Item 4',
+        value: 'Item 4',
+      },
+    ],
+    defaultValue: 'Item 1',
+    value: 'Item 1',
+    direction: 'bottom right',
+  },
+};
