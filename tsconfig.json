@@ -36,7 +36,8 @@
     // ----------
     "skipDefaultLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {

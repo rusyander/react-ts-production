@@ -15,7 +15,6 @@ import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/g
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -23,6 +22,7 @@ import {
 import { ProfileActions, ProfileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCartHeader } from '../EditableProfileCartHeader/EditableProfileCartHeader';
 import { VStack } from 'shared/ui/Stack';
+import { ValidateProfileError } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {
   className?: string;

@@ -5,3 +5,4 @@ export { getArticlesDetailsDataSelectors } from './model/selectors/getArticlesDe
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleViewSections } from './ui/ArticleViewSections/ArticleViewSections';
 export type { ArticleSortFields } from './model/types/article';
+export { ArticleBlockType } from './model/consts/consts';
