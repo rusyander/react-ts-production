@@ -27,11 +27,11 @@ export default {
   reporters: [
     'default',
     [
-      'jest-html-reporter',
+      'jest-html-reporters',
       {
         publickPath: '<rootDir>/reports/unit',
         pageTitle: 'Test Report',
-        openReport: true,
+        openReport: false,
       },
     ],
   ],

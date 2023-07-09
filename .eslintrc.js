@@ -106,6 +106,8 @@ module.exports = {
     'rustam-plugin-fsd-elsint/path-checker': 'error',
     '@typescript-eslint/no-unused-vars': 'off',
     'storybook/prefer-pascal-case': 'off',
+    '@typescript-eslint/await-thenable': 'off',
+    '@typescript-eslint/no-confusing-void-expression': 'off',
   },
   globals: {
     __IS_DEV__: true,

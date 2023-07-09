@@ -13,16 +13,22 @@ export const ArticleRecommendationsList = memo(
   (props: ArticleRecommendationsListProps) => {
     const { className } = props;
     const { t } = useTranslation('articleDetails');
+    const limit: any = 5;
     const {
       data: articles,
       isLoading,
       error,
-    } = getArticleRecommendationsList(3);
+    } = getArticleRecommendationsList(limit);
 
     return (
       <VStack gap="8">
         <Texts size="sizeL" title={t('Рекомендуем')} />
-        <ArticleList article={articles} isLoading={isLoading} target="_blank" />
+        <ArticleList
+          virtualization={false}
+          article={articles || []}
+          isLoading={isLoading}
+          target="_blank"
+        />
       </VStack>
     );
   }

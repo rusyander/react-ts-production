@@ -51,17 +51,29 @@ export const EditableProfileCartHeader = ({
     >
       <Texts title={t('Профиль')} />
       {readonly && authData?.id === profileData?.id ? (
-        <Button onClick={hasEdit} theme="outline">
+        <Button
+          onClick={hasEdit}
+          theme="outline"
+          data-testid={'EditableProfileCartHeader.EditButton'}
+        >
           {t('Редактировать')}
         </Button>
       ) : (
         <>
           {authData?.id === profileData?.id && (
             <HStack gap="8">
-              <Button onClick={onCancelEdit} theme="outline_red">
+              <Button
+                onClick={onCancelEdit}
+                theme="outline_red"
+                data-testid={'EditableProfileCartHeader.CancelButton'}
+              >
                 {t('Отменить')}
               </Button>
-              <Button onClick={onSave} theme="outline">
+              <Button
+                onClick={onSave}
+                theme="outline"
+                data-testid={'EditableProfileCartHeader.SaveButton'}
+              >
                 {t('Сохранить')}
               </Button>{' '}
             </HStack>

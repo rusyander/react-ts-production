@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
@@ -10,6 +10,8 @@ interface TextProps {
   theme?: 'primary' | 'error' | 'inverted';
   align?: 'left' | 'center' | 'right';
   size?: TextSize;
+
+  'data-testid'?: string;
 }
 type HeadersTagType = 'h1' | 'h2' | 'h3';
 
@@ -19,7 +21,7 @@ const mapSizeToHeaderTag: Record<TextSize, HeadersTagType> = {
   sizeL: 'h1',
 };
 
-export const Text: FC<TextProps> = memo(
+export const Text = memo(
   ({
     className,
     title,
@@ -27,6 +29,7 @@ export const Text: FC<TextProps> = memo(
     theme = 'primary',
     align = 'left',
     size = 'sizeM',
+    'data-testid': dataTestId = 'Text',
   }: TextProps) => {
     const HeaderTag = mapSizeToHeaderTag[size];
     const mods: Mods = {
@@ -36,8 +39,16 @@ export const Text: FC<TextProps> = memo(
     };
     return (
       <div className={classNames(cls.Text, mods, [className])}>
-        {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
-        {text && <p className={cls.text}>{text}</p>}
+        {title && (
+          <HeaderTag data-testid={`${dataTestId}.Header`} className={cls.title}>
+            {title}
+          </HeaderTag>
+        )}
+        {text && (
+          <p data-testid={`${dataTestId}.Paragraph`} className={cls.text}>
+            {text}
+          </p>
+        )}
       </div>
     );
   }

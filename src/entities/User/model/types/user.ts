@@ -1,7 +1,18 @@
+import { type } from 'os';
+
+// export enum UserRole {
+//   ADMIN = 'admin',
+//   USER = 'user',
+//   MANAGER = 'manager',
+// }
+
+export type UserRole = 'ADMIN' | 'USER' | 'MANAGER';
+
 export interface User {
   id: string;
   username: string;
   avatar?: string;
+  roles?: UserRole[];
 }
 
 export interface UserSchema {

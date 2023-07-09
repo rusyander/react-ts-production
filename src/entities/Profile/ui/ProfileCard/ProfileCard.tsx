@@ -101,6 +101,7 @@ export const ProfileCard = memo(
           placeholder={t('Ваше имя')}
           onChange={onChangeFirstName}
           readonly={readonly}
+          data-testid={'ProfileCard.Firstname'}
         />
 
         <Input
@@ -109,6 +110,7 @@ export const ProfileCard = memo(
           placeholder={t('Ваша фамилия')}
           onChange={onChangeLastName}
           readonly={readonly}
+          data-testid={'ProfileCard.Lastname'}
         />
 
         <Input
@@ -118,6 +120,7 @@ export const ProfileCard = memo(
           placeholder={t('Ваша возраст')}
           onChange={onChangeAge}
           readonly={readonly}
+          data-testid={'ProfileCard.Age'}
         />
 
         <Input
@@ -126,6 +129,7 @@ export const ProfileCard = memo(
           placeholder={t('Город')}
           onChange={onChangeCity}
           readonly={readonly}
+          data-testid={'ProfileCard.City'}
         />
 
         <Input
@@ -134,6 +138,7 @@ export const ProfileCard = memo(
           placeholder={t('Ваш никнейм')}
           onChange={onChangeUsername}
           readonly={readonly}
+          data-testid={'ProfileCard.Username'}
         />
 
         <Input
@@ -142,6 +147,7 @@ export const ProfileCard = memo(
           placeholder={t('Ваша аватарка')}
           onChange={onChangeAvatar}
           readonly={readonly}
+          data-testid={'ProfileCard.Avatar'}
         />
 
         <CurrencySelect

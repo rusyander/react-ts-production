@@ -4,9 +4,7 @@ import cls from './EditableProfileCard.module.scss';
 import { memo, useCallback } from 'react';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Texts } from 'shared/ui/Text';
@@ -136,6 +134,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
               key={error}
               text={validateErrorYranslates[error]}
               theme="error"
+              data-testid="EditableProfileCard.Error"
             />
           ))}
         <ProfileCard
