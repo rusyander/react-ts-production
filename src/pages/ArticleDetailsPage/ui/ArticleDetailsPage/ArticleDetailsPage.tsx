@@ -21,13 +21,13 @@ function ArticleDetailsPage() {
   const { t } = useTranslation('articleDetails');
   const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return (
-      <Page>
-        <h1>{t('Статья не найдена')}</h1>
-      </Page>
-    );
-  }
+  // if (!id) {
+  //   return (
+  //     <Page>
+  //       <h1>{t('Статья не найдена')}</h1>
+  //     </Page>
+  //   );
+  // }
 
   return (
     <DynamicModuleLoader reducers={redusers} removeAfterUnmaunt={true}>

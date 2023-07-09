@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { StoreDecorator } from 'shared/config/storybook/storeDecorator/StoreDecorator';
 
 const meta: Meta<typeof ArticleDetailsPageHeader> = {
-  title: 'shared/ArticleDetailsPageHeader',
+  title: 'pages/ArticleDetailsPageHeader',
   component: ArticleDetailsPageHeader,
   tags: ['autodocs'],
 

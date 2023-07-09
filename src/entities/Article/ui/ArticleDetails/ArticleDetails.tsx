@@ -31,7 +31,7 @@ const reducers = {
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
@@ -83,7 +83,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   //   }
   // }, [dispatch, id]);
   useInitialEffect(() => {
-    dispatch(fetchArticlesById(id));
+    dispatch(fetchArticlesById(id || ''));
   });
 
   let content;
