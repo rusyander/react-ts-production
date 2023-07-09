@@ -45,6 +45,7 @@ export const ArticleViewSections = memo((props: ArticleViewSectionsProps) => {
           onClick={onClick(item.view as 'SMALL' | 'BIG')}
           theme="clear"
           key={item.view}
+          className={cls.buttons}
         >
           <Icon
             Svg={item.icon}

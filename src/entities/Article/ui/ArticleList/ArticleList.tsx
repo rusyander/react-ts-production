@@ -55,6 +55,16 @@ export const ArticleList = memo((props: ArticleListProps) => {
     ? article.length
     : Math.ceil(article.length / itemsPerRow);
 
+  const renderArticle = (article: Article) => (
+    <ArticleListItem
+      article={article}
+      view={view}
+      className={cls.card}
+      key={article.id}
+      target={target}
+    />
+  );
+
   const rowRender = ({ index, isScrolling, key, style }: ListRowProps) => {
     const items = [];
     const fromIndex = index * itemsPerRow;
@@ -80,65 +90,65 @@ export const ArticleList = memo((props: ArticleListProps) => {
   };
 
   return (
-    <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
-      {({
-        height,
-        width,
-        registerChild,
-        onChildScroll,
-        isScrolling,
-        scrollTop,
-      }) => (
-        <div
-          ref={registerChild}
-          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-        >
-          <List
-            height={height ?? 700}
-            rowCount={rowCount}
-            rowHeight={isBig ? 700 : 330}
-            rowRenderer={rowRender}
-            width={width ? width - 80 : 700}
-            autoHeight
-            onScroll={onChildScroll}
-            isScrolling={isScrolling}
-            scrollTop={scrollTop}
-          />
-          {isLoading && (
-            <div
-              className={classNames(cls.articleList, {}, [
-                className,
-                cls[view],
-              ])}
-            >
-              {new Array(view === 'SMALL' ? 9 : 6).fill(0).map((_, index) => (
-                <ArticleListItemSkeleton
-                  view={view}
-                  key={index}
-                  className={cls.card}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-    </WindowScroller>
-
-    // <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-    //   {article.length > 0 ? article.map(renderArticle) : null}
-    //   {isLoading && (
+    // <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
+    //   {({
+    //     height,
+    //     width,
+    //     registerChild,
+    //     onChildScroll,
+    //     isScrolling,
+    //     scrollTop,
+    //   }) => (
     //     <div
-    //       className={classNames(cls.articleList, {}, [className, cls[view]])}
+    //       ref={registerChild}
+    //       className={classNames(cls.ArticleList, {}, [className, cls[view]])}
     //     >
-    //       {new Array(view === 'SMALL' ? 9 : 6).fill(0).map((_, index) => (
-    //         <ArticleListItemSkeleton
-    //           view={view}
-    //           key={index}
-    //           className={cls.card}
-    //         />
-    //       ))}
+    //       <List
+    //         height={height ?? 700}
+    //         rowCount={rowCount}
+    //         rowHeight={isBig ? 700 : 330}
+    //         rowRenderer={rowRender}
+    //         width={width ? width - 80 : 700}
+    //         autoHeight
+    //         onScroll={onChildScroll}
+    //         isScrolling={isScrolling}
+    //         scrollTop={scrollTop}
+    //       />
+    //       {isLoading && (
+    //         <div
+    //           className={classNames(cls.articleList, {}, [
+    //             className,
+    //             cls[view],
+    //           ])}
+    //         >
+    //           {new Array(view === 'SMALL' ? 9 : 6).fill(0).map((_, index) => (
+    //             <ArticleListItemSkeleton
+    //               view={view}
+    //               key={index}
+    //               className={cls.card}
+    //             />
+    //           ))}
+    //         </div>
+    //       )}
     //     </div>
     //   )}
-    // </div>
+    // </WindowScroller>
+
+    <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+      {article.length > 0 ? article.map(renderArticle) : null}
+      {isLoading && (
+        <div
+          className={classNames(cls.articleList, {}, [className, cls[view]])}
+        >
+          {new Array(view === 'SMALL' ? 9 : 6).fill(0).map((_, index) => (
+            <ArticleListItemSkeleton
+              view={view}
+              key={index}
+              className={cls.card}
+            />
+          ))}
+        </div>
+      )}
+    </div>
   );
 });

@@ -1,27 +1,26 @@
-import React, { FC, useCallback } from 'react';
+import { useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { useTranslation } from 'react-i18next';
 import { Texts } from 'shared/ui/Text';
 import { Button } from 'shared/ui/Button/Button';
-import {
-  ProfileActions,
-  getProfileData,
-  getProfileReadonly,
-  updateProfileData,
-} from 'entities/Profile';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
 import { useParams } from 'react-router-dom';
 import { HStack } from 'shared/ui/Stack';
-interface ProfilePageHeaderProps {
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { ProfileActions } from '../../model/slice/profileSlice';
+
+interface EditableProfileCartHeaderProps {
   className?: string;
 }
 
-export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
+export const EditableProfileCartHeader = ({
   className,
-}) => {
+}: EditableProfileCartHeaderProps) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation('profile');
   const readonly = useSelector(getProfileReadonly);

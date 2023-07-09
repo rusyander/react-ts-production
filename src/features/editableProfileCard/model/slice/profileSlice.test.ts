@@ -1,8 +1,11 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ProfileSchema, ValidateProfileError } from '../types/profile';
 import { ProfileReducer, ProfileActions } from './profileSlice';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import {
+  ProfileSchema,
+  ValidateProfileError,
+} from '../types/editableProfileCardSchema';
 
 const data = {
   first: 'test',

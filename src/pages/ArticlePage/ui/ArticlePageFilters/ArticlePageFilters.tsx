@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticlePageFilters.module.scss';
@@ -19,7 +19,7 @@ import { ArticleSortSelector } from 'features/ArticleSortSelector/ArticleSortSel
 import { SortOrder } from 'shared/types';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
+import { TabItem } from 'shared/ui/Tabs/Tabs';
 import { ArticleType } from 'entities/Article/model/types/article';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs/ArticleTypeTabs';
 

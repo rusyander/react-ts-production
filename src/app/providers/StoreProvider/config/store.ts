@@ -13,6 +13,7 @@ import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { UISliceReducer } from 'features/Ui';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -24,6 +25,7 @@ export function createReduxStore(
     counter: CounterReducer,
     user: UserReducer,
     ui: UISliceReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
 
     // loginForm: LoginReducer,
     // articleDetails: ArticleDetailsReducer,
@@ -45,7 +47,7 @@ export function createReduxStore(
         thunk: {
           extraArgument: extraArh,
         },
-      });
+      }).concat(rtkApi.middleware);
     },
   });
 
