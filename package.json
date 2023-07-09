@@ -26,7 +26,8 @@
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "open": ".loki\\report.html",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html && npm run open",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "author": "",
   "license": "ISC",
