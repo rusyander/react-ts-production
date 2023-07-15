@@ -3,8 +3,8 @@ import { Suspense } from 'react';
 
 import ForbiddenPage from './ForbiddenPage';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
 const meta: Meta<typeof ForbiddenPage> = {
   title: 'pages/ForbiddenPage',

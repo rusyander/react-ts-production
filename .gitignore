@@ -6,3 +6,4 @@
 .loki.report.json
 .test-report.html
 /jest-html-reporters-attach
+.jest-html-reporters-attach

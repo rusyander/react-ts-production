@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import MainPage from './MainPage';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
 
 const meta: Meta<typeof MainPage> = {

@@ -1,16 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Dropdown } from './Dropdown';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { Popovers } from './Popover';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreDecorator } from 'shared/config/storybook/storeDecorator/StoreDecorator';
-import { Button } from '../Button/Button';
+import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/StoreDecorator';
 
-const meta: Meta<typeof Dropdown> = {
-  title: 'shared/Dropdown',
-  component: Dropdown,
+const meta: Meta<typeof Popovers> = {
+  title: 'shared/Popover',
+  component: Popovers,
   tags: ['autodocs'],
 
   decorators: [
@@ -31,31 +30,13 @@ const meta: Meta<typeof Dropdown> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Dropdown>;
+type Story = StoryObj<typeof Popovers>;
 
 export const Primary: Story = {
   args: {
-    trigger: <Button>Dropdown</Button>,
-    items: [
-      {
-        content: 'Item 1',
-        onClick: () => {
-          console.log('Item 1');
-        },
-      },
-      {
-        content: 'Item 2',
-        onClick: () => {
-          console.log('Item 1');
-        },
-      },
-      {
-        content: 'Item 3',
-        onClick: () => {
-          console.log('Item 1');
-        },
-      },
-    ],
+    children: 'asdasd',
+    trigger: <button>Trigger</button>,
+    direction: 'bottom left',
   },
 };
 

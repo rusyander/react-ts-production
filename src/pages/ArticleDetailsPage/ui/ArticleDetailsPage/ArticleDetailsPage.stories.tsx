@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
 
-import { StoreDecorator } from 'shared/config/storybook/storeDecorator/StoreDecorator';
-import { ArticleBlockType } from 'entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/StoreDecorator';
+import { ArticleBlockType } from '@/entities/Article';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
   title: 'pages/ArticleDetailsPage',

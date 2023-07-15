@@ -1,0 +1,49 @@
+.popup {
+  position: relative;
+}
+// .active {
+//   background: var(--invert-primary-color);
+// }
+
+.optionsTopRight {
+  bottom: 100%;
+  left: 0;
+}
+.optionsTopLeft {
+  bottom: 100%;
+  right: 0;
+}
+.optionsBottomLeft {
+  top: 100%;
+  right: 0;
+}
+.optionsBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.active {
+  background: var(--invert-primary-color);
+  color: var(--primary-color);
+}
+.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.labelActive {
+  opacity: 1;
+}
+.labelDeact {
+  opacity: 0.7;
+}
+.label {
+  color: var(--primary-color);
+}
+.trigger {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}

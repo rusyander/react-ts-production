@@ -1,11 +1,11 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleList.module.scss';
 
-import { Texts } from 'shared/ui/Text';
+import { Texts } from '@/shared/ui/Text';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
-import { PAGE_ID } from 'widgets/Page/Page';
+import { PAGE_ID } from '@/widgets/Page/Page';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Article, ArticleView } from '../../model/types/article';

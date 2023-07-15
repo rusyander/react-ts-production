@@ -1,5 +1,5 @@
 import React, { memo, type FC } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './PageError.module.scss';
 import { useTranslation } from 'react-i18next';
 

@@ -3,8 +3,8 @@ import { Suspense } from 'react';
 
 import AdminPanelPage from './AdminPanelPage';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
 const meta: Meta<typeof AdminPanelPage> = {
   title: 'pages/AdminPanelPage',

@@ -29,7 +29,7 @@ module.exports = {
   rules: {
     'react/jsx-indent': [0, 2],
     'react/jsx-indent-props': [0, 2],
-    '@typescript-eslint/indent': 'warn',
+    '@typescript-eslint/indent': 'off',
     indent: [0, 2],
     'react/jsx-filename-extension': [
       2,
@@ -64,7 +64,7 @@ module.exports = {
         code: 130,
       },
     ],
-    indent: 'warn',
+    indent: 'off',
 
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
@@ -108,6 +108,7 @@ module.exports = {
     'storybook/prefer-pascal-case': 'off',
     '@typescript-eslint/await-thenable': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
+    '@typescript-eslint/return-await': 'off',
   },
   globals: {
     __IS_DEV__: true,

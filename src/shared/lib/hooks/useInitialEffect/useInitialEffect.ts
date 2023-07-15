@@ -1,4 +1,4 @@
-import { fetchArticlesById } from 'entities/Article/model/services/fetchArticlesById/fetchArticlesById';
+import { fetchArticlesById } from '@/entities/Article/model/services/fetchArticlesById/fetchArticlesById';
 import { useEffect } from 'react';
 
 export function useInitialEffect(callback: () => void) {

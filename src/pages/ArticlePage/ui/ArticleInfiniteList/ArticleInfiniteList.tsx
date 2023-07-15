@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArticleList } from 'entities/Article';
+import { ArticleList } from '@/entities/Article';
 import {
   articlesPageError,
   articlesPageIsLoading,
@@ -10,9 +10,9 @@ import { initArticlePage } from '../../model/services/initArticlePage/initArticl
 import { getArticles } from '../../model/slice/articlePageSlice';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'widgets/Page/Page';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from '@/widgets/Page/Page';
 
 interface ArticleInfiniteListProps {
   className?: string;

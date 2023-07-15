@@ -1,14 +1,14 @@
 import { useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { useTranslation } from 'react-i18next';
-import { Texts } from 'shared/ui/Text';
-import { Button } from 'shared/ui/Button/Button';
+import { Texts } from '@/shared/ui/Text';
+import { Button } from '@/shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getUserAuthData } from 'entities/User';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserAuthData } from '@/entities/User';
 import { useParams } from 'react-router-dom';
-import { HStack } from 'shared/ui/Stack';
+import { HStack } from '@/shared/ui/Stack';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
@@ -37,11 +37,11 @@ export const EditableProfileCartHeader = ({
     dispatch(ProfileActions.cancelEdit());
   }, [dispatch]);
 
-  const onSave = useCallback(() => {
+  const onSave = () => {
     if (id) {
       dispatch(updateProfileData());
     }
-  }, [dispatch, id]);
+  };
 
   return (
     <HStack

@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Loader } from './Loader';
 import { BrowserRouter } from 'react-router-dom';
 import { Suspense } from 'react';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
 const meta: Meta<typeof Loader> = {
   title: 'shared/Loader',

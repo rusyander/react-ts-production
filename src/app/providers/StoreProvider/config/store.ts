@@ -6,14 +6,14 @@ import {
   configureStore,
 } from '@reduxjs/toolkit';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
-import { CounterReducer } from 'entities/Counter';
-import { UserReducer } from 'entities/User';
+import { CounterReducer } from '@/entities/Counter';
+import { UserReducer } from '@/entities/User';
 import { createReducerManager } from './reduserManaget';
-import { $api } from 'shared/api/api';
+import { $api } from '@/shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
-import { ArticleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { UISliceReducer } from 'features/Ui';
-import { rtkApi } from 'shared/api/rtkApi';
+import { ArticleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
+import { UISliceReducer } from '@/features/Ui';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export function createReduxStore(
   initialState?: StateSchema,

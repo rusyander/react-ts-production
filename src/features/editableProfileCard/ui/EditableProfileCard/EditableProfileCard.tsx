@@ -1,14 +1,14 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import cls from './EditableProfileCard.module.scss';
 import { memo, useCallback } from 'react';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Texts } from 'shared/ui/Text';
-import { ProfileCard } from 'entities/Profile/ui/ProfileCard/ProfileCard';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Texts } from '@/shared/ui/Text';
+import { ProfileCard } from '@/entities/Profile/ui/ProfileCard/ProfileCard';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -18,10 +18,10 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 import {
   DynamicModuleLoader,
   ReducersList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModalLoader';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModalLoader';
 import { ProfileActions, ProfileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCartHeader } from '../EditableProfileCartHeader/EditableProfileCartHeader';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 import { ValidateProfileError } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {
@@ -43,7 +43,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
 
-  const validateErrorYranslates = {
+  const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера'),
     [ValidateProfileError.INCORECT_AGE]: t('Некоректный возраст'),
     [ValidateProfileError.INCORECT_COUNTRY]: t('Некоректный регион'),
@@ -129,11 +129,11 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       >
         <EditableProfileCartHeader />
         {validateErrors?.length &&
-          validateErrors.map((error) => (
+          validateErrors.map((err) => (
             <Texts
-              key={error}
-              text={validateErrorYranslates[error]}
+              key={err}
               theme="error"
+              text={validateErrorTranslates[err]}
               data-testid="EditableProfileCard.Error"
             />
           ))}

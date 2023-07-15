@@ -1,5 +1,5 @@
-import { CommentList } from 'entities/Comment';
-import { AddCommentForm } from 'features/addCommentForm';
+import { CommentList } from '@/entities/Comment';
+import { AddCommentForm } from '@/features/addCommentForm';
 import {
   getArticleCommentsIsLoading,
   getArticleCommentsError,
@@ -9,11 +9,11 @@ import { getArticleComments } from '../../model/slice/articleDetailCommentsSlice
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Texts } from 'shared/ui/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Texts } from '@/shared/ui/Text';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsCommentsProps {
   className?: string;

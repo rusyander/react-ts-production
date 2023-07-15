@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleImageBlockCompenent } from './ArticleImageBlockCompenent';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ArticleBlockType } from '../../model/consts/consts';

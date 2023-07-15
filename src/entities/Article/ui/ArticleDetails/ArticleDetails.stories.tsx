@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleDetails } from './ArticleDetails';
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreDecorator } from 'shared/config/storybook/storeDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/StoreDecorator';
 import { ArticleBlockType } from '../../model/consts/consts';
 
 const meta: Meta<typeof ArticleDetails> = {

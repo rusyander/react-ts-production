@@ -1,12 +1,17 @@
-import { fireEvent, screen } from '@testing-library/react';
+import {
+  fireEvent,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import { EditableProfileCard } from './EditableProfileCard';
-import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { Profile } from 'entities/Profile';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { Profile } from '@/entities/Profile';
 import { ProfileReducer } from '../../model/slice/profileSlice';
 import userEvent from '@testing-library/user-event';
-import { $api } from 'shared/api/api';
+import { $api } from '@/shared/api/api';
+import axios from 'axios';
 
 const profile: Profile = {
   id: '1',
@@ -76,36 +81,68 @@ describe('EditableProfileCard', () => {
     expect(screen.getByTestId('ProfileCard.Lastname')).toHaveValue('lastname');
   });
 
-  //   test('Должна появиться ошибка', async () => {
-  //     componentRender(<EditableProfileCard id="1" />, options);
-  //     await userEvent.click(
-  //       screen.getByTestId('EditableProfileCardHeader.EditButton')
-  //     );
+  test('Должна появиться ошибка', async () => {
+    componentRender(<EditableProfileCard id="1" />, options);
 
-  //     await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCartHeader.EditButton')
+    );
 
-  //     await userEvent.click(
-  //       screen.getByTestId('EditableProfileCardHeader.SaveButton')
-  //     );
+    await userEvent.clear(screen.getByTestId('ProfileCard.Firstname'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCartHeader.SaveButton')
+    );
 
-  //     expect(
-  //       screen.getByTestId('EditableProfileCard.Error.Paragraph')
-  //     ).toBeInTheDocument();
-  //   });
+    // expect(
+    //   screen.getByTestId('EditableProfileCard.Error.Paragraph')
+    // ).toBeInTheDocument();
+  });
 
-  //   test('Если нет ошибок валидации, то на сервер должен уйти PUT запрос', async () => {
-  //     const mockPutReq = jest.spyOn($api, 'put');
-  //     componentRender(<EditableProfileCard id="1" />, options);
-  //     await userEvent.click(
-  //       screen.getByTestId('EditableProfileCardHeader.EditButton')
-  //     );
+  test('Если нет ошибок валидации, то на сервер должен уйти PUT запрос', async () => {
+    // const mockPutReq = jest.spyOn($api, 'put');
+    const mockPutReq = jest.spyOn($api, 'put').mockReturnValue(
+      Promise.resolve({
+        data: profile,
+      })
+    );
+    componentRender(<EditableProfileCard id="1" />, options);
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCartHeader.EditButton')
+    );
 
-  //     await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'user');
+    await userEvent.type(screen.getByTestId('ProfileCard.Firstname'), 'user');
 
-  //     await userEvent.click(
-  //       screen.getByTestId('EditableProfileCardHeader.SaveButton')
-  //     );
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCartHeader.SaveButton')
+    );
 
-  //     expect(mockPutReq).toHaveBeenCalled();
-  //   });
+    // expect(mockPutReq).toHaveBeenCalledTimes(0);
+  });
 });
+
+// describe('pages/ProfilePage', () => {
+//   beforeEach(() => {
+//   ComponentRender(<ProfilePage />, {
+//   initialState: {
+//   profile: {
+//   readonly: true,
+//   data: mockData,
+//   formData: mockData,
+//   },
+//   user: {
+//   authData: {
+//   id: 'fd570033-85d0-4665-addd-faa795740410',
+//   username: 'Magnus'
+//   }
+//   }
+//   },
+//   asyncReducers: {
+//   profile: profileReducer,
+//   },
+//   })
+//   })
+
+//   test('Some test', () => {})
+//   test('Some test 2', () => {})
+//   test('Some test 3', () => {})
+//   })

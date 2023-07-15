@@ -1,29 +1,29 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleDetails.module.scss';
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModalLoader';
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModalLoader';
 import { ArticleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticlesById } from '../../model/services/fetchArticlesById/fetchArticlesById';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   getArticlesDetailsDataSelectors,
   getArticlesDetailsLoadingSelectors,
   getArticlesDetailsErrorSelectors,
 } from '../../model/selectors/getArticlesDetailsSelectors/getArticlesDetailsSelectors';
 import { useSelector } from 'react-redux';
-import { Texts } from 'shared/ui/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import EyeIcon from 'shared/assets/icons/eye.svg';
-import CreateDateIcon from 'shared/assets/icons/create-date.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Texts } from '@/shared/ui/Text';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import CreateDateIcon from '@/shared/assets/icons/create-date.svg';
+import { Icon } from '@/shared/ui/Icon/Icon';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockCompenent } from '../ArticleImageBlockCompenent/ArticleImageBlockCompenent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { ArticleBlockType } from '../../model/consts/consts';
 
 const reducers = {

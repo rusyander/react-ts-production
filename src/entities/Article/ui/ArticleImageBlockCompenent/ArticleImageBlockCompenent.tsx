@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleImageBlockCompenent.module.scss';
 import { ArticleImageBlock } from '../../model/types/article';
-import { Texts } from 'shared/ui/Text';
+import { Texts } from '@/shared/ui/Text';
 
 interface ArticleImageBlockCompenentProps {
   className?: string;

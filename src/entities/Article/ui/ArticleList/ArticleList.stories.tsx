@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleList } from './ArticleList';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Article } from '../../model/types/article';

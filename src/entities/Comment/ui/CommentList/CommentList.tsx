@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Texts } from 'shared/ui/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Texts } from '@/shared/ui/Text';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Comments } from '../../model/types/comment';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 
 interface CommentListProps {
   className?: string;

@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { Texts } from 'shared/ui/Text';
-import { ArticleList } from 'entities/Article';
-import { VStack } from 'shared/ui/Stack';
+import { Texts } from '@/shared/ui/Text';
+import { ArticleList } from '@/entities/Article';
+import { VStack } from '@/shared/ui/Stack';
 import { getArticleRecommendationsList } from '../../api/articleRecomendationsApi';
 
 interface ArticleRecommendationsListProps {

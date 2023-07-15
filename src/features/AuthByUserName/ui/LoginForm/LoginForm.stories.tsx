@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import LoginForm from './LoginForm';
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof LoginForm> = {

@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import ProfilePage from './ProfilePage';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import ImageAvatar from 'shared/assets/test/avatar.jpg';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import ImageAvatar from '@/shared/assets/test/avatar.jpg';
 
 const meta: Meta<typeof ProfilePage> = {
   title: 'pages/ProfilePage',
