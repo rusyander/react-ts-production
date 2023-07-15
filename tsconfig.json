@@ -51,6 +51,7 @@
     "./config/storybook/**/*",
     "./config/jest/**/*",
     "src/**/*",
-    "scripts/updateImports.ts"
+    "scripts/updateImports.ts",
+    "vite.config.ts"
   ]
 }

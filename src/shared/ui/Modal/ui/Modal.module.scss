@@ -1,3 +1,43 @@
+// .Modal {
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   left: 0;
+//   opacity: 0;
+//   pointer-events: none;
+//   z-index: -1;
+//   color: var(--primary-color);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .content {
+//   padding: 20px;
+//   border-radius: 12px;
+//   background: var(--bg-color);
+//   transition: 0.3s transform;
+//   transform: scale(0.5);
+//   max-width: 60%;
+//   z-index: var(--modale-z-index);
+// }
+// .opened {
+//   pointer-events: auto;
+//   opacity: 1;
+//   z-index: var(--modale-z-index);
+
+//   .content {
+//     transform: scale(1);
+//   }
+// }
+
+// .isClosing {
+//   .content {
+//     transform: scale(0.1);
+//   }
+// }
+
 .Modal {
   position: fixed;
   top: 0;
@@ -6,7 +46,7 @@
   left: 0;
   opacity: 0;
   pointer-events: none;
-  z-index: -1;
+  z-index: 100;
   color: var(--primary-color);
   display: flex;
   justify-content: center;
@@ -20,12 +60,13 @@
   transition: 0.3s transform;
   transform: scale(0.5);
   max-width: 60%;
-  z-index: var(--modale-z-index);
+  z-index: var(--modal-z-index);
 }
+
 .opened {
   pointer-events: auto;
   opacity: 1;
-  z-index: var(--modale-z-index);
+  z-index: var(--modal-z-index);
 
   .content {
     transform: scale(1);
@@ -34,6 +75,6 @@
 
 .isClosing {
   .content {
-    transform: scale(0.1);
+    transform: scale(0.2);
   }
 }
