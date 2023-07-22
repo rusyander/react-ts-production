@@ -46,6 +46,6 @@ const LoginSlice = createSlice({
 export const { actions: LoginActions } = LoginSlice;
 export const { reducer: LoginReducer } = LoginSlice;
 
-function asError (action: AnyAction) {
+function asError(action: AnyAction) {
   return action.type.endsWith('rejected');
 }

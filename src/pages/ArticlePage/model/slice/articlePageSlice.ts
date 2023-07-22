@@ -6,11 +6,10 @@ import {
 } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { ArticlePageSchema } from '../types/articlePageSchema';
-import { Article, ArticleSortFields } from '@/entities/Article';
+import { Article, ArticleSortFields, ArticleType } from '@/entities/Article';
 import { fetchArticleList } from '../services/fetchArticleList/fetchArticleList';
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { SortOrder } from '@/shared/types';
-import { ArticleType } from '@/entities/Article/model/types/article';
 
 const articlesAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,

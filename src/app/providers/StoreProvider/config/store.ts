@@ -10,10 +10,9 @@ import { CounterReducer } from '@/entities/Counter';
 import { UserReducer } from '@/entities/User';
 import { createReducerManager } from './reduserManaget';
 import { $api } from '@/shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
-import { ArticleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
-import { UISliceReducer } from '@/features/Ui';
+
 import { rtkApi } from '@/shared/api/rtkApi';
+import { UISliceReducer } from '@/features/Ui';
 
 export function createReduxStore(
   initialState?: StateSchema,

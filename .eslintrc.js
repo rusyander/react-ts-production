@@ -103,7 +103,9 @@ module.exports = {
     'jsx-props-no-spreading': 'off',
     '@typescript-eslint/restrict-plus-operands': 'warn',
     'n/no-callback-literal': 'off',
-    'rustam-plugin-fsd-elsint/path-checker': 'error',
+    'rustam-plugin-fsd-elsint/path-checker': ['error', { alias: '@' }],
+    'rustam-plugin-fsd-elsint/public-api-imports': ['error', { alias: '@' }],
+
     '@typescript-eslint/no-unused-vars': 'off',
     'storybook/prefer-pascal-case': 'off',
     '@typescript-eslint/await-thenable': 'off',
