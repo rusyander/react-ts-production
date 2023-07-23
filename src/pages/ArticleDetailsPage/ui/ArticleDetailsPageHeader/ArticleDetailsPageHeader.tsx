@@ -7,7 +7,7 @@ import { getArticlesDetailsDataSelectors } from '@/entities/Article';
 import { getCanEditArticle } from '../../model/selectors/article';
 import { useNavigate } from 'react-router-dom';
 import { HStack } from '@/shared/ui/Stack';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticle_edit } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -26,7 +26,7 @@ export const ArticleDetailsPageHeader = memo(
     }, []);
 
     const onEditArticle = useCallback(() => {
-      navigate(`${RoutePath.article}/${article?.id || ''}/edit`);
+      navigate(getRouteArticle_edit(article?.id || ''));
     }, [article?.id, navigate]);
     return (
       <HStack max justify="between" className={classNames('', {}, [className])}>

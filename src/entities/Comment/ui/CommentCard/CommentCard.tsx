@@ -8,7 +8,7 @@ import { Texts } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
 import { VStack } from '@/shared/ui/Stack';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 
 interface CommentCardProps {
   className?: string;
@@ -40,7 +40,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
     >
       <AppLink
         className={cls.header}
-        to={`${RoutePath.profile}${comment?.user?.id || ''}`}
+        to={getRouteProfile(comment?.user?.id || '')}
       >
         {comment?.user.avatar ? (
           <Avatar size={30} src={comment.user.avatar} />

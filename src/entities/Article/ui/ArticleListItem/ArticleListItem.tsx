@@ -14,7 +14,7 @@ import { ArticleTextBlock } from './../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleBlockType } from '../../model/consts/consts';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticle_details } from '@/shared/const/router';
 
 interface ArticleListItemProps {
   className?: string;
@@ -29,9 +29,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   // const navigate = useNavigate();
   const [isHover, bindHover] = useHover();
   // console.log('isHover', isHover);
-  // const onOpenArticle = useCallback(() => {
-  //   navigate(RoutePath.article_details + article.id);
-  // }, [article.id, navigate]);
 
   const types = <Texts className={cls.types} text={article.type.join(', ')} />;
   const views = (
@@ -66,10 +63,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             />
           )}
           <div className={cls.footer}>
-            <AppLink
-              target={target}
-              to={RoutePath.article_details + article.id}
-            >
+            <AppLink target={target} to={getRouteArticle_details(article.id)}>
               <Button theme="outline">{t('Читать далее...')}</Button>
             </AppLink>
             <div className={cls.viewsEl}>{views}</div>
@@ -84,7 +78,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       {...bindHover}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
     >
-      <AppLink target={target} to={RoutePath.article_details + article.id}>
+      <AppLink target={target} to={getRouteArticle_details(article.id)}>
         <Card className={cls.card}>
           <div className={cls.imageWrapper}>
             <img src={article.img} alt={article.title} className={cls.img} />

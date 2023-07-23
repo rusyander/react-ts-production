@@ -2,11 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlePageFilters.module.scss';
-import {
-  ArticleSortFields,
-  ArticleViewSections,
-  ArticleType,
-} from '@/entities/Article';
+import { ArticleSortFields, ArticleType } from '@/entities/Article';
 import {
   articlesPageOrder,
   articlesPageSearch,
@@ -25,6 +21,7 @@ import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArt
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem } from '@/shared/ui/Tabs/ui/Tabs';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSections } from '@/features/ArticleViewSections';
 
 interface ArticlePageFiltersProps {
   className?: string;

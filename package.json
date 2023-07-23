@@ -30,7 +30,8 @@
     "prepare": "husky install",
     "generate:slice": "node ./scripts/createSlice/index.js",
     "fix-imports": "ts-node ./scripts/refactoring/updateImports.ts",
-    "create-indexFileForShared": "ts-node ./scripts/refactoring/createPublicApiFotSharedUi.ts"
+    "create-indexFileForShared": "ts-node ./scripts/refactoring/createPublicApiFotSharedUi.ts",
+    "postinstall": "node scripts/postinstall.js"
   },
   "author": "",
   "license": "ISC",
