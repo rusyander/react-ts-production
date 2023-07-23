@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Button } from '@/shared/ui/Button/ui/Button';
-import { CounterActions } from '../model/slice/counterSlice';
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useCounterActions } from '../model/slice/counterSlice';
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
 interface CounterProps {
   className?: string;
@@ -10,12 +10,17 @@ interface CounterProps {
 
 export const Counter: FC<CounterProps> = ({ className }) => {
   const dispatch = useDispatch();
-  const counter = useSelector(getCounterValue);
+  // const counter = useSelector(getCounterValue);
+  const counter = useCounterValue();
+  const { dicrement: decr, increment: inc } = useCounterActions();
+
   const increment = () => {
-    dispatch(CounterActions.increment());
+    // dispatch(CounterActions.increment());
+    decr();
   };
   const dicrement = () => {
-    dispatch(CounterActions.dicrement());
+    // dispatch(CounterActions.dicrement());
+    inc();
   };
   return (
     <div>
