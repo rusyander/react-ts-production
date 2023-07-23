@@ -1,4 +1,4 @@
-import React, { memo, type FC } from 'react';
+import React, { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './PageError.module.scss';
 import { useTranslation } from 'react-i18next';

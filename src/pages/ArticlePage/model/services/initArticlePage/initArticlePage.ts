@@ -32,11 +32,11 @@ export const initArticlePage = createAsyncThunk<
         dispatch(ArticlePageSliceActions.setSort(sortFromUrl));
       }
       if (pageFromUrl) {
-        // @ts-ignore
+        // @ts-expect-error
         dispatch(ArticlePageSliceActions.setPageCount(Number(pageFromUrl)));
       }
       if (limitFromUrl) {
-        // @ts-ignore
+        // @ts-expect-error
         dispatch(ArticlePageSliceActions.setLimit(Number(limitFromUrl)));
       }
       if (searchFromUrl) {

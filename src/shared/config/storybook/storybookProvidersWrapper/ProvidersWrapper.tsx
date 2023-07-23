@@ -1,4 +1,4 @@
-import { FC, Suspense } from 'react';
+import { Suspense } from 'react';
 import { StoreProvider } from '../../../../app/providers/StoreProvider';
 import { BrowserRouter } from 'react-router-dom';
 import { Theme } from '../../../../app/providers/ThemeProvider';

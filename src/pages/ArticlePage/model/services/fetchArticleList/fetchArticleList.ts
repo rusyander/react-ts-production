@@ -31,7 +31,7 @@ export const fetchArticleList = createAsyncThunk<
 
     try {
       // window.history.pushState(null, '', `?page=${page}`);
-      // @ts-ignore
+      // @ts-expect-error
       addQueryParams({ page, getLimit, type, sort, orders, search });
       const response = await extra.api.get<Article[]>('/articles', {
         params: {

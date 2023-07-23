@@ -36,6 +36,6 @@ const ArticleDetailsSlice = createSlice({
 export const { actions: ArticleDetailsActions } = ArticleDetailsSlice;
 export const { reducer: ArticleDetailsReducer } = ArticleDetailsSlice;
 
-function asError(action: AnyAction) {
+function asError (action: AnyAction) {
   return action.type.endsWith('rejected');
 }

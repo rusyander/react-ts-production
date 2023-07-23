@@ -1,4 +1,4 @@
-import React, { memo, type ButtonHTMLAttributes, type FC } from 'react';
+import React, { memo, type ButtonHTMLAttributes } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 

@@ -16,7 +16,7 @@ export const AddCommentFormSlice = createSlice({
   },
 });
 
-function asError(action: AnyAction) {
+function asError (action: AnyAction) {
   return action.type.endsWith('rejected');
 }
 

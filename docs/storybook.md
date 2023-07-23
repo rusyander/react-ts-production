@@ -1,14 +1,31 @@
+## Storybook
+
+В проекте для каждого компонента описываются стори-кейсы.
+Запросы на сервер мокаются с помощью storybook-addon-mock.
+
+Файл со сторикейсами создает рядом с компонентом с расширением .stories.tsx
+
+Запустить сторибук можно командой:
+
+- `npm run storybook`
+
+Подробнее о [Storybook](/docs/storybook.md)
+
+Пример:
+
+```typescript jsx
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { NotificationItem } from './NotificationItem';
+import { Tabs } from './Tabs';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { action } from '@storybook/addon-actions';
 
-const meta: Meta<typeof NotificationItem> = {
-  title: 'shared/NotificationItem',
-  component: NotificationItem,
+const meta: Meta<typeof Tabs> = {
+  title: 'shared/Tabs',
+  component: Tabs,
   tags: ['autodocs'],
 
   decorators: [
@@ -29,10 +46,18 @@ const meta: Meta<typeof NotificationItem> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof NotificationItem>;
+type Story = StoryObj<typeof Tabs>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    tabs: [
+      { value: '1', content: '1' },
+      { value: '2', content: '2' },
+      { value: '3', content: '3' },
+    ],
+    value: '1',
+    onTabClick: action('onTabClick'),
+  },
 };
 
 Primary.decorators = [
@@ -49,3 +74,4 @@ Primary.decorators = [
   //   },
   // }),
 ];
+```

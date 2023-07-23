@@ -2,10 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 import { StoreProvider } from '@/app/providers/StoreProvider';
-import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/StoreDecorator';
 
 const article = {
   id: 1,

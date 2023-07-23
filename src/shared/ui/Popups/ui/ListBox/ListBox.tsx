@@ -1,6 +1,6 @@
-import { Fragment, ReactNode, memo, useState } from 'react';
+import { Fragment, ReactNode, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ListBox.module.scss';
 import { Listbox as HListbox } from '@headlessui/react';
 import { Button } from '../../../Button/ui/Button';

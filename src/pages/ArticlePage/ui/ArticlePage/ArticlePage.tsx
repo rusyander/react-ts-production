@@ -15,7 +15,7 @@ import cls from './ArticlePage.module.scss';
 const reducers: ReducersList = {
   articlesPage: ArticlePageSliceReducer,
 };
-function ArticlePage() {
+function ArticlePage () {
   const { t } = useTranslation('article');
 
   const dispatch = useAppDispatch();

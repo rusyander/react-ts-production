@@ -24,6 +24,7 @@ module.exports = {
     'react-hooks',
     'i18next',
     '@typescript-eslint',
+    'unused-imports',
     'rustam-plugin-fsd-elsint',
   ],
   rules: {
@@ -134,6 +135,7 @@ module.exports = {
     '@typescript-eslint/await-thenable': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/return-await': 'off',
+    'unused-imports/no-unused-imports': 'error',
   },
   globals: {
     __IS_DEV__: true,

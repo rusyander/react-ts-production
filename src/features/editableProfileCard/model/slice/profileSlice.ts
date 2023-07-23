@@ -67,6 +67,6 @@ const ProfileSlice = createSlice({
 export const { actions: ProfileActions } = ProfileSlice;
 export const { reducer: ProfileReducer } = ProfileSlice;
 
-function asError(action: AnyAction) {
+function asError (action: AnyAction) {
   return action.type.endsWith('rejected');
 }

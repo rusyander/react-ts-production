@@ -72,6 +72,6 @@ export const { actions: ArticleDetailCommentsActions } =
 export const { reducer: ArticleDetailCommentsReducer } =
   ArticleDetailCommentsSlice;
 
-function asError(action: AnyAction) {
+function asError (action: AnyAction) {
   return action.type.endsWith('rejected');
 }

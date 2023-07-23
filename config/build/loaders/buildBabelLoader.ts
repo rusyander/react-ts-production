@@ -5,7 +5,7 @@ interface BuildBabelLoaderPeops extends BuildOptions {
   isTsx?: boolean;
 }
 
-export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderPeops) {
+export function buildBabelLoader ({ isDev, isTsx }: BuildBabelLoaderPeops) {
   return {
     // test: /\.(js|jsx|tsx)$/,
     test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,

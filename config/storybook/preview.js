@@ -11,6 +11,14 @@ const preview = {
         date: /Date$/,
       },
     },
+    themes: {
+      default: 'light',
+      list: [
+        { name: 'light', class: 'theme-twt', color: '#ffffff' },
+        { name: 'dark', class: 'theme-fb', color: '#000000' },
+        { name: 'orange', class: 'theme-fb', color: '#ffb005' },
+      ],
+    },
   },
 };
 

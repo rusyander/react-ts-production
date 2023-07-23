@@ -12,11 +12,7 @@ import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUserName';
 import { AddCommentFormSchema } from '@/features/addCommentForm';
-import {
-  ArticleDetailsPageComponentSchema,
-  ArticleDetailsPageSchema,
-  ArticleDetailsRecommendationSchema,
-} from '@/pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlePageSchema } from '@/pages/ArticlePage';
 import { NavigateOptions, To } from 'react-router-dom';
 import { UISchema } from '@/features/Ui';
@@ -33,10 +29,8 @@ export interface StateSchema {
   profile?: ProfileSchema;
   loginForm?: LoginSchema;
   articleDetails?: ArticleDetailsSchema;
-  // articleDetailsComments?: ArticleDetailsPageComponentSchema;
   addCommentForm?: AddCommentFormSchema;
   articlesPage?: ArticlePageSchema;
-  // articleDetailsPageRecommendations?: ArticleDetailsRecommendationSchema;
   articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
@@ -48,7 +42,6 @@ export interface ReducerManager {
   reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;
-  // getMountedReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {

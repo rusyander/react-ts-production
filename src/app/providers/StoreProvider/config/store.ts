@@ -14,7 +14,7 @@ import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { UISliceReducer } from '@/features/Ui';
 
-export function createReduxStore(
+export function createReduxStore (
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>
   // navigate?: (to: To, options?: NavigateOptions) => void

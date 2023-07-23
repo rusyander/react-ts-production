@@ -6,7 +6,7 @@ export interface UseInfiniteScrollOptions {
   wrapperRef: MutableRefObject<HTMLElement>;
 }
 
-export function useInfiniteScroll({
+export function useInfiniteScroll ({
   callback,
   wrapperRef,
   triggerRef,

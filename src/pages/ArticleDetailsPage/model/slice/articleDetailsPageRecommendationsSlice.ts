@@ -73,6 +73,6 @@ export const ArticleDetailsPageRecommendationsReducer =
 export const ArticleDetailsPageRecommendationsActions =
   ArticleDetailsPageRecommendations.actions;
 
-function asError(action: AnyAction) {
+function asError (action: AnyAction) {
   return action.type.endsWith('rejected');
 }

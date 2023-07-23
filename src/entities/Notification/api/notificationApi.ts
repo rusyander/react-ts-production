@@ -3,7 +3,7 @@ export type { Notifications } from '../model/types/notifications';
 
 const notificationApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    // @ts-ignore
+    // @ts-expect-error
     getNotifications: build.query<Notifications[], null>({
       query: () => ({
         url: '/notifications',

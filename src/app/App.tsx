@@ -8,7 +8,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserActions, getUserInitedSelectors } from '@/entities/User';
 
-export default function App() {
+export default function App () {
   const { theme } = useTheme();
   const dispatch = useDispatch();
   const initedUser = useSelector(getUserInitedSelectors);

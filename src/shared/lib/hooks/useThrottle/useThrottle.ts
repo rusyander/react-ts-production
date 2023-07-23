@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 
-export function useThrottle(
+export function useThrottle (
   callback: (...args: any[]) => void,
   dellay: number
 ) {

@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import ImageAvatar from '../../assets//test/avatar.jpg';
+import ImageAvatar from '../../../assets/test/avatar.jpg';
 
 const meta: Meta<typeof Avatar> = {
   title: 'shared/Avatar',

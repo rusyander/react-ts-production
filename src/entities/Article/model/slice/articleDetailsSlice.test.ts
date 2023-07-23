@@ -96,7 +96,7 @@ describe('ProfileSlice', () => {
     expect(
       ArticleDetailsReducer(
         state as ArticleDetailsSchema,
-        // @ts-ignore
+        // @ts-expect-error
         fetchArticlesById.fulfilled(data, '', '')
       )
     ).toEqual({

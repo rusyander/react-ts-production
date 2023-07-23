@@ -12,7 +12,7 @@ interface UseModalProps {
   animationDelay: number;
 }
 
-export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
+export function useModal ({ animationDelay, isOpen, onClose }: UseModalProps) {
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;

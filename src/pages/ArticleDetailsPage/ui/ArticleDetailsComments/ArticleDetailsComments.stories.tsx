@@ -5,7 +5,6 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/StoreDecorator';
 
 const meta: Meta<typeof ArticleDetailsComments> = {
   title: 'pages/ArticleDetailsComments',

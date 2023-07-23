@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { Reducer, type ReactNode } from 'react';
-import ReactDOM from 'react-dom/client';
+import { type ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
 import i18nForTests from '@/shared/config/i18n/i18nForTests';
@@ -13,7 +12,7 @@ export interface ComponentRenderProps {
   asyncReducers?: any;
 }
 
-export function componentRender(
+export function componentRender (
   component: ReactNode,
   options: ComponentRenderProps = {}
 ) {

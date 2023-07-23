@@ -6,7 +6,6 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Theme } from '@/shared/const/theme';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/StoreDecorator';
 
 const meta: Meta<typeof Page> = {
   title: 'widgets/Page',

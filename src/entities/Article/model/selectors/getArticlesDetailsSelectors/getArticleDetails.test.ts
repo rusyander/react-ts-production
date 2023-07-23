@@ -13,7 +13,7 @@ describe('get article details', () => {
     };
     const state: DeepPartial<StateSchema> = {
       articleDetails: {
-        data: data,
+        data,
       },
     };
     expect(getArticlesDetailsDataSelectors(state as StateSchema)).toEqual(data);
