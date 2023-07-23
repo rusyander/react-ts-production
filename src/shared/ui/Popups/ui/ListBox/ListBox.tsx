@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ListBox.module.scss';
 import { Listbox as HListbox } from '@headlessui/react';
-import { Button } from '../../../Button/Button';
+import { Button } from '../../../Button/ui/Button';
 import { HStack } from '../../../Stack';
 import { DropdownDirection } from '@/shared/types/ui';
 import { mapDirectionClass } from '../../styles/consts';

@@ -104,7 +104,30 @@ module.exports = {
     '@typescript-eslint/restrict-plus-operands': 'warn',
     'n/no-callback-literal': 'off',
     'rustam-plugin-fsd-elsint/path-checker': ['error', { alias: '@' }],
-    'rustam-plugin-fsd-elsint/public-api-imports': ['error', { alias: '@' }],
+    'rustam-plugin-fsd-elsint/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.story.*',
+          '**/StoreDecorator.tsx',
+        ],
+      },
+    ],
+    'rustam-plugin-fsd-elsint/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: [
+          '**/StoreProvider',
+          '**/ThemeProvider',
+          '**/*.stories.tsx',
+          '**/StateSchema.ts',
+          '**/testing',
+        ],
+      },
+    ],
 
     '@typescript-eslint/no-unused-vars': 'off',
     'storybook/prefer-pascal-case': 'off',

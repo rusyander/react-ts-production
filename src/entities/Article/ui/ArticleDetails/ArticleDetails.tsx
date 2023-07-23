@@ -13,11 +13,11 @@ import {
 } from '../../model/selectors/getArticlesDetailsSelectors/getArticlesDetailsSelectors';
 import { useSelector } from 'react-redux';
 import { Texts } from '@/shared/ui/Text';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Skeleton } from '@/shared/ui/Skeleton/ui/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar/ui/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CreateDateIcon from '@/shared/assets/icons/create-date.svg';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockCompenent } from '../ArticleImageBlockCompenent/ArticleImageBlockCompenent';

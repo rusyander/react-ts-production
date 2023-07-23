@@ -4,7 +4,7 @@ import cls from './LoginModal.module.scss';
 import { Modal } from '@/shared/ui/Modal';
 // import { LoginForm } from '../LoginForm/LoginForm';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui/Loader/ui/Loader';
 
 interface LoginModalProps {
   className?: string;

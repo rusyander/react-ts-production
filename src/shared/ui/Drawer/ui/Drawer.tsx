@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Drawer.module.scss';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { Portal } from '@headlessui/react';
-import { Overlay } from '../Overlay/Overlay';
+import { Overlay } from '../../Overlay/ui/Overlay';
 
 import {
   AnimationProvider,

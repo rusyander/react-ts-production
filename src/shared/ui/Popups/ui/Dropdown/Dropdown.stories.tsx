@@ -6,7 +6,7 @@ import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreDecorator } from '@/shared/config/storybook/storeDecorator/StoreDecorator';
-import { Button } from '../../../Button/Button';
+import { Button } from '../../../Button/ui/Button';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'shared/Dropdown',

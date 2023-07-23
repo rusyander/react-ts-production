@@ -3,8 +3,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleViewSections.module.scss';
 import IconsBig from '../../../../shared/assets/icons/big.svg';
 import IconsSmall from '../../../../shared/assets/icons/small.svg';
-import { Button } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button } from '@/shared/ui/Button/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 
 interface ArticleViewSectionsProps {
   className?: string;

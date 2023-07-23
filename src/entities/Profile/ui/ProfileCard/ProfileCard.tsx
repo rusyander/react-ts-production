@@ -3,10 +3,10 @@ import cls from './ProfileCard.module.scss';
 
 import { useTranslation } from 'react-i18next';
 import { Texts } from '@/shared/ui/Text';
-import { Input } from '@/shared/ui/Input/Input';
+import { Input } from '@/shared/ui/Input/ui/Input';
 import { Profile } from '../../model/types/profile';
-import { Loader } from '@/shared/ui/Loader/Loader';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Loader } from '@/shared/ui/Loader/ui/Loader';
+import { Avatar } from '@/shared/ui/Avatar/ui/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
 import { memo } from 'react';

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import AppLink from './AppLink';
+import { AppLink } from './AppLink';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { ThemeProvider } from '@/app/providers/ThemeProvider';

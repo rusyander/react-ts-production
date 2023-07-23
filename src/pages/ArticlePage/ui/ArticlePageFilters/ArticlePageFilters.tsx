@@ -17,13 +17,13 @@ import {
 import { ArticlePageSliceActions } from '../../model/slice/articlePageSlice';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Card } from '@/shared/ui/Card/Card';
-import { Input } from '@/shared/ui/Input/Input';
+import { Card } from '@/shared/ui/Card/ui/Card';
+import { Input } from '@/shared/ui/Input/ui/Input';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { SortOrder } from '@/shared/types';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem } from '@/shared/ui/Tabs/Tabs';
+import { TabItem } from '@/shared/ui/Tabs/ui/Tabs';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 
 interface ArticlePageFiltersProps {

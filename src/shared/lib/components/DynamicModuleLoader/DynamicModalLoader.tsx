@@ -1,9 +1,9 @@
 import { Reducer } from '@reduxjs/toolkit';
-import { ReduxStoreWithManager } from '@/app/providers/StoreProvider';
 import {
-  StateSchema,
+  ReduxStoreWithManager,
   StateSchemaKey,
-} from '@/app/providers/StoreProvider/config/StateSchema';
+} from '@/app/providers/StoreProvider';
+
 import { FC, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 

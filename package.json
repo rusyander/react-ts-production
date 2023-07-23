@@ -29,7 +29,8 @@
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html && npm run open",
     "prepare": "husky install",
     "generate:slice": "node ./scripts/createSlice/index.js",
-    "fix-imports": "ts-node ./scripts/updateImports.ts"
+    "fix-imports": "ts-node ./scripts/refactoring/updateImports.ts",
+    "create-indexFileForShared": "ts-node ./scripts/refactoring/createPublicApiFotSharedUi.ts"
   },
   "author": "",
   "license": "ISC",
@@ -84,7 +85,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-rustam-plugin-fsd-elsint": "^0.0.5",
+    "eslint-plugin-rustam-plugin-fsd-elsint": "^0.0.9",
     "eslint-plugin-storybook": "^0.6.12",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^8.0.0",

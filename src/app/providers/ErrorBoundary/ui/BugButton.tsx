@@ -1,28 +1,25 @@
-import React, { type FC, useEffect, useState } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Button } from '@/shared/ui/Button/Button'
+import React, { type FC, useEffect, useState } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button/ui/Button';
 
 interface BugButtonProps {
-  className?: string
+  className?: string;
 }
 
 export const BugButton: FC<BugButtonProps> = ({ className }) => {
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
   const toogleError = () => {
-    setError(!error)
-  }
+    setError(!error);
+  };
 
   useEffect(() => {
     if (error) {
-      throw new Error('Error')
+      throw new Error('Error');
     }
-  }, [error])
+  }, [error]);
   return (
-        <Button
-          onClick={toogleError}
-          className={classNames('', {}, [className])}
-        >
-          throw new Error
-        </Button>
-  )
-}
+    <Button onClick={toogleError} className={classNames('', {}, [className])}>
+      throw new Error
+    </Button>
+  );
+};

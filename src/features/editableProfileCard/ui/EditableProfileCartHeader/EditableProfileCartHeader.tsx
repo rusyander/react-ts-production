@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { useTranslation } from 'react-i18next';
 import { Texts } from '@/shared/ui/Text';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button/ui/Button';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';

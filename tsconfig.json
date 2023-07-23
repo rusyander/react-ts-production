@@ -52,6 +52,7 @@
     "./config/jest/**/*",
     "src/**/*",
     "scripts/updateImports.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "scripts"
   ]
 }
