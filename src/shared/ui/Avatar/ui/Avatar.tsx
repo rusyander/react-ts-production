@@ -2,7 +2,7 @@ import { CSSProperties, memo, useMemo } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
 import { AppImage } from '../../AppImage';
-import NotLoadUserImage from '../../../assets/icons/NotLoadUserImage.svg';
+import NotLoadUserImage from '../../../assets/icons/notLoadUserImage.svg';
 import { Icon } from '../../Icon';
 import { Skeleton } from '../../Skeleton';
 
