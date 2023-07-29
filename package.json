@@ -33,6 +33,9 @@
     "create-indexFileForShared": "ts-node ./scripts/refactoring/createPublicApiFotSharedUi.ts",
     "postinstall": "node scripts/postinstall.js"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -97,6 +100,7 @@
     "jest": "^27.5.1",
     "jest-html-reporters": "^3.1.4",
     "json-server": "^0.17.3",
+    "lint-staged": "^13.2.3",
     "loki": "^0.31.2",
     "mini-css-extract-plugin": "^2.7.6",
     "prettier": "^2.8.7",
