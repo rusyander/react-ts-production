@@ -48,6 +48,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <div
         {...bindHover}
         className={classNames(cls.articleListItem, {}, [className, cls[view]])}
+        data-testid={'ArticleListItem'}
       >
         <Card className={cls.card}>
           <div className={cls.header}>
@@ -84,6 +85,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     <div
       {...bindHover}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
+      data-testid={'ArticleListItem'}
     >
       <AppLink target={target} to={getRouteArticle_details(article.id)}>
         <Card className={cls.card}>

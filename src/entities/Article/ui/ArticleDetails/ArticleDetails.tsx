@@ -115,7 +115,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <HStack justify="center" max className={cls.avatarWrapper}>
+        <HStack
+          data-testid={'ArticleDetails.Info'}
+          justify="center"
+          max
+          className={cls.avatarWrapper}
+        >
           <Avatar size={200} src={articleData?.img} className={cls.avatar} />
         </HStack>
         <VStack gap="4" max>

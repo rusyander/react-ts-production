@@ -5,3 +5,6 @@ export const getArticleCommentsIsLoading = (state: StateSchema) =>
 
 export const getArticleCommentsError = (state: StateSchema) =>
   state?.articleDetailsPage?.articleDetailsComments?.error || undefined;
+
+export const getArticleCommentsData = (state: StateSchema) =>
+  state?.articleDetailsPage?.articleDetailsComments?.data || undefined;

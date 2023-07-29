@@ -4,5 +4,6 @@ import { Comments } from '@/entities/Comment';
 export interface ArticleDetailsPageComponentSchema
   extends EntityState<Comments> {
   isLoading?: boolean;
-  error?: string;
+  error?: string | undefined;
+  data?: Comments[] | undefined;
 }

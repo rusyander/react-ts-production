@@ -21,7 +21,7 @@ export const ArticleRecommendationsList = memo(
     } = getArticleRecommendationsList(limit);
 
     return (
-      <VStack gap="8">
+      <VStack gap="8" data-testid={'ArticleRecommendationsList'}>
         <Texts size="sizeL" title={t('Рекомендуем')} />
         <ArticleList
           virtualization={false}

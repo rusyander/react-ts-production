@@ -142,6 +142,23 @@ module.exports = {
     __API__: true,
     __PROJECT__: true,
   },
+  // ignorePatterns: [
+  //   '**/node_modules/**',
+  //   '**/dist/**',
+  //   '**/build/**',
+  //   './config',
+  //   './cypress',
+  //   './scripts',
+  // ],
+  ignorePatterns: [
+    'cypress',
+    'dist',
+    'build',
+    'config',
+    'scripts',
+    'cypress.config.ts',
+  ],
+  // include: ['src/**/*.{ts,tsx,jsx}'],
   overrides: [
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx,jsx}'],

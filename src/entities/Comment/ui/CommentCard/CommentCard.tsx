@@ -22,7 +22,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.commentCard, {}, [className])}>
+      <div
+        className={classNames(cls.commentCard, {}, [className])}
+        data-testid={'CommentCard.loading'}
+      >
         <div className={cls.header}>
           <Skeleton border="50%" width={30} height={30} />
           <Skeleton width={100} height={16} className={cls.username} />
@@ -37,6 +40,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
       max
       gap="8"
       className={classNames(cls.commentCard, {}, [className, cls.loading])}
+      data-testid={'CommentCard.content'}
     >
       <AppLink
         className={cls.header}

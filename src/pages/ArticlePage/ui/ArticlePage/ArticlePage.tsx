@@ -15,7 +15,7 @@ import cls from './ArticlePage.module.scss';
 const reducers: ReducersList = {
   articlesPage: ArticlePageSliceReducer,
 };
-function ArticlePage () {
+function ArticlePage() {
   const { t } = useTranslation('article');
 
   const dispatch = useAppDispatch();
@@ -26,7 +26,7 @@ function ArticlePage () {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmaunt={false}>
-      <Page onScrollEnd={onLoadNextPage}>
+      <Page data-testid={'ArticlePage'} onScrollEnd={onLoadNextPage}>
         <div className={cls.list}>
           <ArticlePageFilters />
           <ArticleInfiniteList />

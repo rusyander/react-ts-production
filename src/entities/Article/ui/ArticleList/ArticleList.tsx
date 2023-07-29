@@ -147,7 +147,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
     //   )}
     // </WindowScroller>
 
-    <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+    <div
+      data-testid={'ArticleList'}
+      className={classNames(cls.articleList, {}, [className, cls[view]])}
+    >
       {article.length > 0 ? article.map(renderArticle) : null}
       {isLoading && (
         <div
