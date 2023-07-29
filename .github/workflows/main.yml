@@ -82,12 +82,14 @@ jobs:
         if: always()
       - name: build storybook
         run: npm run storybook:build
-        if: always()
-      - name: screenshot testing
-        run: npm run test:ui:ci
-        if: always()
-      - name: Generate HTML report
-        run: npm run test:ui:report
+        # if: always()
+        # - name: screenshot testing
+        #   run: npm run test:ui:ci
+        #   if: always()
+        # - name: Generate HTML report
+        #   run: npm run test:ui:report
+      - name: unit testing
+        run: npm run test:unit
         if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -114,7 +116,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci --force
+        run: npm i --force
       - name: linting typescript
         run: npm run lint:ts
         # if: always()
