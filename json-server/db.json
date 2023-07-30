@@ -602,6 +602,45 @@
       ],
       "blocks": [],
       "id": "LByU-4w"
+    },
+    {
+      "title": "Kotlin news",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "HqepuuR"
+    },
+    {
+      "title": "Kotlin news",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "xB6v3kC"
+    },
+    {
+      "title": "Kotlin news",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "k6rKskV"
     }
   ],
   "comments": [
@@ -908,6 +947,27 @@
       "feedback": "ddd",
       "userId": "1",
       "id": "of1-5e3"
+    },
+    {
+      "articleId": "HqepuuR",
+      "rate": 5,
+      "feedback": "feedback",
+      "userId": "4",
+      "id": "AWHpqDA"
+    },
+    {
+      "articleId": "xB6v3kC",
+      "rate": 5,
+      "feedback": "feedback",
+      "userId": "4",
+      "id": "MXFpr0q"
+    },
+    {
+      "articleId": "k6rKskV",
+      "rate": 5,
+      "feedback": "feedback",
+      "userId": "4",
+      "id": "wOxEjoC"
     }
   ],
   "profile-ratings": [

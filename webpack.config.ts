@@ -13,9 +13,9 @@ export default (env: BuildEnv) => {
     buildLocales: path.resolve(__dirname, 'build', 'locales'),
   };
 
-  const mode = env.mode || 'development';
-  const PORT = env.port || 9090;
-  const apiUrl = env.apiUrl || 'http://localhost:9988';
+  const mode = env?.mode || 'development';
+  const PORT = env?.port || 9090;
+  const apiUrl = env?.apiUrl || 'http://localhost:9988';
   // production-server-seven.vercel.app
 
   const isDev = mode === 'development';
