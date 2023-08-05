@@ -7,44 +7,43 @@ import { Comments } from '../../model/types/comment';
 import { VStack } from '@/shared/ui/Stack';
 
 interface CommentListProps {
-  className?: string;
-  comments?: Comments[];
-  isLoading?: boolean;
+    className?: string;
+    comments?: Comments[];
+    isLoading?: boolean;
 }
 
 export const CommentList = memo((props: CommentListProps) => {
-  const { className, comments, isLoading } = props;
-  const { t } = useTranslation();
+    const { className, comments, isLoading } = props;
+    const { t } = useTranslation();
 
-  if (isLoading) {
+    if (isLoading) {
+        return (
+            <VStack gap="16" max className={classNames('', {}, [className])}>
+                <CommentCard isLoading={true} />
+                <CommentCard isLoading={true} />
+                <CommentCard isLoading={true} />
+            </VStack>
+        );
+    }
+
     return (
-      <VStack gap="16" max className={classNames('', {}, [className])}>
-        <CommentCard isLoading={true} />
-        <CommentCard isLoading={true} />
-        <CommentCard isLoading={true} />
-      </VStack>
+        <VStack
+            gap="16"
+            max
+            className={classNames('', {}, [className])}
+            data-testid={'CommentList'}
+        >
+            {comments?.length ? (
+                comments.map((comment) => (
+                    <CommentCard
+                        isLoading={isLoading}
+                        key={comment.id}
+                        comment={comment}
+                    />
+                ))
+            ) : (
+                <Texts text={t('Комментариев нет')} />
+            )}
+        </VStack>
     );
-  }
-  console.log('comments', comments);
-
-  return (
-    <VStack
-      gap="16"
-      max
-      className={classNames('', {}, [className])}
-      data-testid={'CommentList'}
-    >
-      {comments?.length ? (
-        comments.map((comment) => (
-          <CommentCard
-            isLoading={isLoading}
-            key={comment.id}
-            comment={comment}
-          />
-        ))
-      ) : (
-        <Texts text={t('Комментариев нет')} />
-      )}
-    </VStack>
-  );
 });

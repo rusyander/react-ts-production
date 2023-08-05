@@ -33,7 +33,8 @@
         "fix-imports": "ts-node ./scripts/refactoring/updateImports.ts",
         "create-indexFileForShared": "ts-node ./scripts/refactoring/createPublicApiFotSharedUi.ts",
         "postinstall": "node scripts/postinstall.js",
-        "prettier": "npx prettier --write"
+        "prettier": "npx prettier --write",
+        "remove-feature": "node scripts/remove-feature.ts"
     },
     "lint-staged": {
         "**/*.{ts,tsx}": "eslint"
