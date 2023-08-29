@@ -1,144 +1,191 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
-import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Button> = {
-  title: 'shared/Button',
-  component: Button,
-  tags: ['autodocs'],
-  // decorators: [
-  //   (Story) => (
-  //     <div className={`'app' ${Theme.DARK}`}>
-  //       <Story />
-  //     </div>
-  //   ),
-  // ],
+    title: 'shared/Button',
+    component: Button,
+    tags: ['autodocs'],
+    // decorators: [
+    //   (Story) => (
+    //     <div className={`'app' ${Theme.DARK}`}>
+    //       <Story />
+    //     </div>
+    //   ),
+    // ],
 
-  decorators: [
-    (Story) => (
-      <Suspense fallback={''}>
-        <BrowserRouter>
-          <StoreProvider>
-            <ThemeProvider>
-              <Story />
-            </ThemeProvider>
-          </StoreProvider>
-        </BrowserRouter>
-      </Suspense>
-    ),
-  ],
+    decorators: [
+        (Story) => (
+            <Suspense fallback={''}>
+                <BrowserRouter>
+                    <StoreProvider>
+                        <ThemeProvider>
+                            <Story />
+                        </ThemeProvider>
+                    </StoreProvider>
+                </BrowserRouter>
+            </Suspense>
+        ),
+    ],
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
+// export const Light: Story = {
+//   args: {
+//       placeholder: 'Наберите текст',
+//       autoFocus: true,
+//   },
+// };
+// Light.decorators = [
+//   (Story) => (
+//       <div className={`'app' ${Theme.LIGHT}`}>
+//           <Story />
+//       </div>
+//   ),
+// ];
+
 export const Primary: Story = {
-  args: {
-    children: 'Text',
-  },
+    args: {
+        children: 'Text',
+    },
 };
+Primary.decorators = [
+    (Story) => (
+        <div className={`'app' ${Theme.LIGHT}`}>
+            <Story />
+        </div>
+    ),
+];
+
+export const Dark: Story = {
+    args: {
+        children: 'Text',
+    },
+};
+Dark.decorators = [
+    (Story) => (
+        <div className={`'app' ${Theme.DARK}`}>
+            <Story />
+        </div>
+    ),
+];
+
+export const Orange: Story = {
+    args: {
+        children: 'Text',
+    },
+};
+Orange.decorators = [
+    (Story) => (
+        <div className={`'app' ${Theme.ORANGE}`}>
+            <Story />
+        </div>
+    ),
+];
 
 export const Clear: Story = {
-  args: {
-    children: 'Text',
-    theme: 'clear',
-  },
+    args: {
+        children: 'Text',
+        theme: 'clear',
+    },
 };
 
 export const ClearInverted: Story = {
-  args: {
-    children: 'Text',
-    theme: 'clearInvert',
-  },
+    args: {
+        children: 'Text',
+        theme: 'clearInvert',
+    },
 };
 
 export const Outline: Story = {
-  args: {
-    children: 'Text',
-    theme: 'outline',
-  },
+    args: {
+        children: 'Text',
+        theme: 'outline',
+    },
 };
 
 export const OutlineSizeL: Story = {
-  args: {
-    children: 'Text',
-    theme: 'outline',
-    size: 'size_l',
-  },
+    args: {
+        children: 'Text',
+        theme: 'outline',
+        size: 'size_l',
+    },
 };
 
 export const OutlineSizeM: Story = {
-  args: {
-    children: 'Text',
-    theme: 'outline',
-    size: 'size_m',
-  },
+    args: {
+        children: 'Text',
+        theme: 'outline',
+        size: 'size_m',
+    },
 };
 
 export const OutlineSizeXL: Story = {
-  args: {
-    children: 'Text',
-    theme: 'background',
-    size: 'size_xl',
-  },
+    args: {
+        children: 'Text',
+        theme: 'background',
+        size: 'size_xl',
+    },
 };
 
 export const BackgroundTheme: Story = {
-  args: {
-    children: 'Text',
-    theme: 'background',
-  },
+    args: {
+        children: 'Text',
+        theme: 'background',
+    },
 };
 
 export const BACKGROUND_INVERTED: Story = {
-  args: {
-    children: 'Text',
-    theme: 'backgroundInverted',
-  },
+    args: {
+        children: 'Text',
+        theme: 'backgroundInverted',
+    },
 };
 export const Disabled: Story = {
-  args: {
-    children: 'Text',
-    theme: 'backgroundInverted',
-    disabled: true,
-  },
+    args: {
+        children: 'Text',
+        theme: 'backgroundInverted',
+        disabled: true,
+    },
 };
 
 export const Square: Story = {
-  args: {
-    children: '>',
-    theme: 'backgroundInverted',
-    square: true,
-  },
+    args: {
+        children: '>',
+        theme: 'backgroundInverted',
+        square: true,
+    },
 };
 
 export const SquareSizeL: Story = {
-  args: {
-    children: '>',
-    theme: 'backgroundInverted',
-    square: true,
-    size: 'size_l',
-  },
+    args: {
+        children: '>',
+        theme: 'backgroundInverted',
+        square: true,
+        size: 'size_l',
+    },
 };
 
 export const SquareSizeM: Story = {
-  args: {
-    children: '>',
-    theme: 'backgroundInverted',
-    square: true,
-    size: 'size_m',
-  },
+    args: {
+        children: '>',
+        theme: 'backgroundInverted',
+        square: true,
+        size: 'size_m',
+    },
 };
 
 export const SquareSizeXL: Story = {
-  args: {
-    children: '>',
-    theme: 'backgroundInverted',
-    square: true,
-    size: 'size_xl',
-  },
+    args: {
+        children: '>',
+        theme: 'backgroundInverted',
+        square: true,
+        size: 'size_xl',
+    },
 };

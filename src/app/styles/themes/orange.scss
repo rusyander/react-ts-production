@@ -1,40 +1,62 @@
 .app_orange_theme {
-  --bg-color: #faf4fb;
-  --invert-bg-color: #bd5012;
-  --primary-color: #9a1a0e;
-  --secondary-color: #d01f0e;
-  --invert-primary-color: #dbd5dc;
-  --invert-secondary-color: #faf4fb;
+    --bg-color: #faf4fb;
+    --invert-bg-color: #bd5012;
+    --primary-color: #9a1a0e;
+    --secondary-color: #d01f0e;
+    --invert-primary-color: #dbd5dc;
+    --invert-secondary-color: #faf4fb;
 
-  // skeleton
-  --skeleton-color: #b3b2b2;
-  --skeleton-shadow: rgba(0 0 0 / 20%);
+    // skeleton
+    --skeleton-color: #b3b2b2;
+    --skeleton-shadow: rgba(0 0 0 / 20%);
 
-  // code
-  --code-bg: #fff;
+    // code
+    --code-bg: #fff;
 
-  // listbox
-  --listbox-bg: #faf4fb;
+    // listbox
+    --listbox-bg: #faf4fb;
+
+    // redesigned
+    --dark-bg-redesigned: #fff3d6;
+    --bg-redesigned: #f0c048;
+    --light-bg-redesigned: #f2d791;
+    --text-redesigned: #1b1311;
+    --hint-redesigned: #b8b2a2;
+    --cancel-redesigned: #ff5e5e;
+    --save-redesigned: #52fa81;
+    --icon-redesigned: #4875f0;
+    --accent-redesigned: #1d59ff;
 }
 
 :root {
-  --bg-color: #faf4fb;
-  --invert-bg-color: #bd5012;
-  --primary-color: #9a1a0e;
-  --secondary-color: #d01f0e;
-  --invert-primary-color: #dbd5dc;
-  --invert-secondary-color: #faf4fb;
+    --bg-color: #faf4fb;
+    --invert-bg-color: #bd5012;
+    --primary-color: #9a1a0e;
+    --secondary-color: #d01f0e;
+    --invert-primary-color: #dbd5dc;
+    --invert-secondary-color: #faf4fb;
 
-  // skeleton
-  --skeleton-color: #b3b2b2;
-  --skeleton-shadow: rgba(0 0 0 / 20%);
+    // skeleton
+    --skeleton-color: #b3b2b2;
+    --skeleton-shadow: rgba(0 0 0 / 20%);
 
-  // code
-  --code-bg: #fff;
+    // code
+    --code-bg: #fff;
 
-  // card
-  --card-bg: #faf4fb;
+    // card
+    --card-bg: #faf4fb;
 
-  // listbox
-  --listbox-bg: #faf4fb;
+    // listbox
+    --listbox-bg: #faf4fb;
+
+    // redesigned
+    --dark-bg-redesigned: #fff3d6;
+    --bg-redesigned: #f0c048;
+    --light-bg-redesigned: #f2d791;
+    --text-redesigned: #1b1311;
+    --hint-redesigned: #b8b2a2;
+    --cancel-redesigned: #ff5e5e;
+    --save-redesigned: #52fa81;
+    --icon-redesigned: #4875f0;
+    --accent-redesigned: #1d59ff;
 }

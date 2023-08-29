@@ -4,34 +4,36 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Link, type LinkProps } from 'react-router-dom';
 
 interface AppLinkProps extends LinkProps {
-  className?: string;
-  theme?: 'primary' | 'secondary' | 'red';
-  children: React.ReactNode;
-  target?: string;
+    className?: string;
+    theme?: 'primary' | 'secondary' | 'red';
+    children: React.ReactNode;
+    target?: string;
 }
-
+/**
+ * @deprecated
+ */
 export const AppLink = forwardRef(
-  (props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
-    const {
-      className,
-      children,
-      to,
-      theme = 'primary',
-      target,
-      ...otherProps
-    } = props;
-    return (
-      <Link
-        ref={ref}
-        className={classNames(cls.AppLink, {}, [className, cls[theme]])}
-        to={to}
-        target={target}
-        {...otherProps}
-      >
-        {children}
-      </Link>
-    );
-  }
+    (props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
+        const {
+            className,
+            children,
+            to,
+            theme = 'primary',
+            target,
+            ...otherProps
+        } = props;
+        return (
+            <Link
+                ref={ref}
+                className={classNames(cls.AppLink, {}, [className, cls[theme]])}
+                to={to}
+                target={target}
+                {...otherProps}
+            >
+                {children}
+            </Link>
+        );
+    },
 );
 
 // export default AppLink;

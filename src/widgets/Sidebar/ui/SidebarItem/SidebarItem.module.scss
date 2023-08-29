@@ -1,32 +1,63 @@
 .items {
-  margin-top: 20px;
-  margin-left: 30px;
-  display: flex;
-  flex-direction: column;
+    margin-top: 20px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .item {
-  // margin-top: 10px;
-  display: flex;
-  align-items: center;
+    // margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .link {
-  text-decoration: none;
-  color: var(--invert-primary-color);
-  margin-left: 10px;
-  opacity: 1;
-  transition: opacity 0.2s ease-in-out;
+    text-decoration: none;
+    color: var(--invert-primary-color);
+    margin-left: 10px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+.linkRedesign {
+    margin-left: 3px;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .icon {
-  fill: var(--invert-primary-color);
+    fill: var(--invert-primary-color);
 }
 
 .collapsed {
-  .link {
-    opacity: 0;
-    transition: 0.2s opacity;
-    width: 0;
-  }
+    padding: 0;
+    .link {
+        opacity: 0;
+        transition: 0.2s opacity;
+        width: 0;
+    }
+}
+
+.itemRedesigned {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0px 16px;
+}
+.collapsedRedesigned {
+    padding: 0 8px;
+    .linkRedesign {
+        opacity: 0;
+        transition: 0.2s opacity;
+        width: 0;
+    }
+}
+
+.active {
+    background: linear-gradient(
+        89.97deg,
+        rgba(29, 89, 255, 0.3) 1.15%,
+        rgba(94, 211, 243, 0) 99.97%
+    );
+    position: relative;
+
+    border-left: 2px solid var(--accent-redesigned);
 }

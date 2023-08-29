@@ -7,42 +7,49 @@ import { Icon } from '../../Icon';
 import { Skeleton } from '../../Skeleton';
 
 interface AvatarProps {
-  className?: string;
-  src?: string;
-  size?: number;
-  alt?: string;
-  fallbackInverted?: boolean;
+    className?: string;
+    src?: string;
+    size?: number;
+    alt?: string;
+    fallbackInverted?: boolean;
 }
+/**
+ * @deprecated
+ */
 
 export const Avatar = memo(
-  ({
-    className,
-    src,
-    size = 100,
-    alt = 'Avatar',
-    fallbackInverted,
-  }: AvatarProps) => {
-    const styles = useMemo<CSSProperties>(() => {
-      return {
-        width: size,
-        height: size,
-      };
-    }, [size]);
-    const mods: Mods = {};
-    const errorFallback = (
-      <Icon inverted={fallbackInverted} width={size} Svg={NotLoadUserImage} />
-    );
-    const fallback = <Skeleton width={size} height={size} border="50%" />;
+    ({
+        className,
+        src,
+        size = 100,
+        alt = 'Avatar',
+        fallbackInverted,
+    }: AvatarProps) => {
+        const styles = useMemo<CSSProperties>(() => {
+            return {
+                width: size,
+                height: size,
+            };
+        }, [size]);
+        const mods: Mods = {};
+        const errorFallback = (
+            <Icon
+                inverted={fallbackInverted}
+                width={size}
+                Svg={NotLoadUserImage}
+            />
+        );
+        const fallback = <Skeleton width={size} height={size} border="50%" />;
 
-    return (
-      <AppImage
-        fallback={fallback}
-        errorFallback={errorFallback}
-        style={styles}
-        src={src}
-        alt={alt}
-        className={classNames(cls.Avatar, mods, [className])}
-      />
-    );
-  }
+        return (
+            <AppImage
+                fallback={fallback}
+                errorFallback={errorFallback}
+                style={styles}
+                src={src}
+                alt={alt}
+                className={classNames(cls.Avatar, mods, [className])}
+            />
+        );
+    },
 );

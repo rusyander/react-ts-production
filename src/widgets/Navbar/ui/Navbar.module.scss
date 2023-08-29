@@ -1,30 +1,32 @@
 .navbar {
-  width: 100%;
-  height: var(--navbar-height);
-  background-color: var(--invert-bg-color);
-  display: flex;
-  align-items: center;
-  // justify-content: end;
-  justify-content: space-between;
-  padding: 20px;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--invert-bg-color);
+    display: flex;
+    align-items: center;
+    // justify-content: end;
+    justify-content: space-between;
+    padding: 20px;
 }
-
+.navbarRedesigned {
+    padding: 16px;
+}
 .links,
 .actions {
-  margin-left: auto;
+    margin-left: auto;
 }
 
 .mainLink {
-  margin-right: 15px;
+    margin-right: 15px;
 }
 .AppName {
-  width: var(--sidebar-width);
-  margin-left: 15px;
+    width: var(--sidebar-width);
+    margin-left: 15px;
 }
 
 .flex {
-  display: flex;
+    display: flex;
 }
 .createBtn {
-  color: var(--invert-primary-color);
+    color: var(--invert-primary-color);
 }

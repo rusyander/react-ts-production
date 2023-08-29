@@ -9,6 +9,8 @@ import { useSelector } from 'react-redux';
 import { getUserInitedSelectors, initAuth } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 export default function App() {
     const { theme } = useTheme();
@@ -24,15 +26,45 @@ export default function App() {
     }
 
     return (
-        <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback={''}>
-                <Navbar />
-
-                <div className="content-page">
-                    <Sidebar />
-                    {initedUser && <AppRouter />}
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+                <div className={classNames('app_redesigned', {}, [theme])}>
+                    <Suspense fallback={''}>
+                        <MainLayout
+                            content={<AppRouter />}
+                            header={<Navbar />}
+                            sidebar={<Sidebar />}
+                            // toolbar={<div>sdasdasdasda</div>}
+                        />
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            off={
+                <div className={classNames('app', {}, [theme])}>
+                    <Suspense fallback={''}>
+                        <Navbar />
+
+                        <div className="content-page">
+                            <Sidebar />
+                            {initedUser && <AppRouter />}
+                        </div>
+                    </Suspense>
+                </div>
+            }
+        />
     );
+
+    // return (
+    //     <div className={classNames('app', {}, [theme])}>
+    //         <Suspense fallback={''}>
+    //             <Navbar />
+
+    //             <div className="content-page">
+    //                 <Sidebar />
+    //                 {initedUser && <AppRouter />}
+    //             </div>
+    //         </Suspense>
+    //     </div>
+    // );
 }

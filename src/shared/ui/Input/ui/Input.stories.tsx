@@ -7,59 +7,75 @@ import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Input> = {
-  title: 'shared/Input',
-  component: Input,
-  tags: ['autodocs'],
-  // decorators: [
-  //   (Story) => (
-  //     <div className={`'app' ${Theme.DARK}`}>
-  //       <Story />
-  //     </div>
-  //   ),
-  // ],
+    title: 'shared/Input',
+    component: Input,
+    tags: ['autodocs'],
+    // decorators: [
+    //   (Story) => (
+    //     <div className={`'app' ${Theme.DARK}`}>
+    //       <Story />
+    //     </div>
+    //   ),
+    // ],
 
-  decorators: [
-    (Story) => (
-      <Suspense fallback={''}>
-        <BrowserRouter>
-          <StoreProvider>
-            <ThemeProvider>
-              <Story />
-            </ThemeProvider>
-          </StoreProvider>
-        </BrowserRouter>
-      </Suspense>
-    ),
-  ],
+    decorators: [
+        (Story) => (
+            <Suspense fallback={''}>
+                <BrowserRouter>
+                    <StoreProvider>
+                        <ThemeProvider>
+                            <div className={`'app' ${Theme.DARK}`}>
+                                <Story />
+                            </div>
+                        </ThemeProvider>
+                    </StoreProvider>
+                </BrowserRouter>
+            </Suspense>
+        ),
+    ],
 };
 
 export default meta;
 type Story = StoryObj<typeof Input>;
 
 export const Light: Story = {
-  args: {
-    placeholder: 'Наберите текст',
-    autoFocus: true,
-  },
+    args: {
+        placeholder: 'Наберите текст',
+        autoFocus: true,
+    },
 };
 Light.decorators = [
-  (Story) => (
-    <div className={`'app' ${Theme.LIGHT}`}>
-      <Story />
-    </div>
-  ),
+    (Story) => (
+        <div className={`'app' ${Theme.LIGHT}`}>
+            <Story />
+        </div>
+    ),
 ];
 
 export const Dark: Story = {
-  args: {
-    placeholder: 'Наберите текст',
-    autoFocus: true,
-  },
+    args: {
+        placeholder: 'Наберите текст',
+        autoFocus: true,
+    },
 };
 Dark.decorators = [
-  (Story) => (
-    <div className={`'app' ${Theme.DARK}`}>
-      <Story />
-    </div>
-  ),
+    (Story) => (
+        <div className={`'app' ${Theme.DARK}`}>
+            <Story />
+        </div>
+    ),
+];
+
+export const Orange: Story = {
+    args: {
+        placeholder: 'Наберите текст',
+        autoFocus: true,
+    },
+};
+Orange.decorators = [
+    (Story) => (
+        <div className={`'app' ${Theme.ORANGE}`}>
+            <Story />
+        </div>
+    ),
 ];

@@ -5,57 +5,68 @@ import StarIcon from '@/shared/assets/icons/star.svg';
 import { Icon } from '../../Icon';
 
 interface StarRatingProps {
-  className?: string;
-  onSelect?: (starsCount: number) => void;
-  size?: number;
-  selectedStarts?: number;
+    className?: string;
+    onSelect?: (starsCount: number) => void;
+    size?: number;
+    selectedStarts?: number;
 }
 
 const start = [1, 2, 3, 4, 5];
 
+/**
+ * @deprecated
+ */
+
 export const StarRating = memo((props: StarRatingProps) => {
-  const { className, onSelect, selectedStarts = 0, size = 30 } = props;
-  const [currentStartsCount, setCurrentStartsCount] = useState(selectedStarts);
-  const [isSelected, setIsSelected] = useState(Boolean(selectedStarts));
+    const { className, onSelect, selectedStarts = 0, size = 30 } = props;
+    const [currentStartsCount, setCurrentStartsCount] =
+        useState(selectedStarts);
+    const [isSelected, setIsSelected] = useState(Boolean(selectedStarts));
 
-  const onHover = (starsCount: number) => () => {
-    if (!isSelected) {
-      setCurrentStartsCount(starsCount);
-    }
-  };
+    const onHover = (starsCount: number) => () => {
+        if (!isSelected) {
+            setCurrentStartsCount(starsCount);
+        }
+    };
 
-  const onLeave = () => {
-    if (!isSelected) {
-      setCurrentStartsCount(0);
-    }
-  };
+    const onLeave = () => {
+        if (!isSelected) {
+            setCurrentStartsCount(0);
+        }
+    };
 
-  const onClick = (starsCount: number) => () => {
-    if (!isSelected) {
-      setIsSelected(true);
-      setCurrentStartsCount(starsCount);
-      onSelect?.(starsCount);
-    }
-  };
+    const onClick = (starsCount: number) => () => {
+        if (!isSelected) {
+            setIsSelected(true);
+            setCurrentStartsCount(starsCount);
+            onSelect?.(starsCount);
+        }
+    };
 
-  return (
-    <div className={classNames(cls.starRating, {}, [className])}>
-      {start.map((starNumber) => (
-        <Icon
-          key={starNumber}
-          width={size}
-          height={size}
-          Svg={StarIcon}
-          className={classNames(cls.starIcon, { [cls.selected]: isSelected }, [
-            currentStartsCount >= starNumber ? cls.hovered : cls.normal,
-          ])}
-          onMouseLeave={onLeave}
-          onMouseEnter={onHover(starNumber)}
-          onClick={onClick(starNumber)}
-          data-testid={`StarRating.${starNumber}`}
-          data-selected={currentStartsCount >= starNumber}
-        />
-      ))}
-    </div>
-  );
+    return (
+        <div className={classNames(cls.starRating, {}, [className])}>
+            {start.map((starNumber) => (
+                <Icon
+                    key={starNumber}
+                    width={size}
+                    height={size}
+                    Svg={StarIcon}
+                    className={classNames(
+                        cls.starIcon,
+                        { [cls.selected]: isSelected },
+                        [
+                            currentStartsCount >= starNumber
+                                ? cls.hovered
+                                : cls.normal,
+                        ],
+                    )}
+                    onMouseLeave={onLeave}
+                    onMouseEnter={onHover(starNumber)}
+                    onClick={onClick(starNumber)}
+                    data-testid={`StarRating.${starNumber}`}
+                    data-selected={currentStartsCount >= starNumber}
+                />
+            ))}
+        </div>
+    );
 });
