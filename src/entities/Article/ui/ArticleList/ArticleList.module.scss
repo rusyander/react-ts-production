@@ -1,24 +1,24 @@
 .BIG {
-  .card {
-    margin-bottom: 30px;
-  }
+    .card {
+        margin-bottom: 30px;
+    }
 }
 
 .SMALL {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-
-  .card {
-    display: inline-flex;
-    height: 300px;
-  }
-  .row {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-  }
+
+    .card {
+        display: inline-flex;
+        height: 300px;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
 }
-.articleList {
-  margin-top: 20px;
-}
+// .articleList {
+//   margin-top: 20px;
+// }

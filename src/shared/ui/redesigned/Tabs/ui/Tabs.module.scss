@@ -1,0 +1,16 @@
+.tabs {
+    display: flex;
+}
+.tab {
+    cursor: pointer;
+    // background: var(--light-bg-redesigned);
+    color: var(--text-redesigned);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    transition: all 0.2s ease-in-out;
+}
+.active {
+    background-color: #000;
+    color: #fff;
+}

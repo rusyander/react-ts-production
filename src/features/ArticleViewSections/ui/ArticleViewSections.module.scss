@@ -1,6 +1,22 @@
 .isSelected {
-  fill: var(--secondary-color);
+    fill: var(--secondary-color);
+    cursor: pointer;
 }
 .buttons {
-  margin-right: 10px;
+    margin-right: 10px;
+}
+
+.redesigned {
+    .buttons {
+        margin-right: 10px;
+    }
+    .isSelected {
+        fill: var(--accent-redesigned);
+        color: var(--accent-redesigned);
+        cursor: pointer;
+    }
+    .notSelected {
+        color: var(--light-bg-redesigned);
+        cursor: pointer;
+    }
 }
