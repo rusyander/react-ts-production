@@ -132,89 +132,16 @@ const replaceComponent = (node: Node) => {
 files.forEach((sourceFile) => {
     sourceFile.forEachDescendant((node) => {
         if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-            replaceToggleFunction(node);
+            return replaceToggleFunction(node);
         }
 
         if (
             node.isKind(SyntaxKind.JsxSelfClosingElement) &&
             isToggleComponent(node)
         ) {
-            replaceComponent(node);
+            return replaceComponent(node);
         }
     });
 });
 
 project.save();
-
-// import { Project, SyntaxKind, Node } from 'ts-morph';
-
-// const project = new Project({});
-
-// const removedFeatureName = process.argv[2];
-// const featureState = process.argv[3];
-
-// if (!removedFeatureName || !featureState) {
-//     throw new Error(
-//         'Пожалуйста, укажите название фичи и ее состояние (on/off)',
-//     );
-// }
-
-// if (!['on', 'off'].includes(featureState)) {
-//     throw new Error('Состояние фичи должно быть on или off');
-// }
-
-// project.addSourceFilesAtPaths('src/**/*.ts');
-// project.addSourceFilesAtPaths('src/**/*.tsx');
-
-// const files = project.getSourceFiles();
-
-// function isToggleFunction(node: Node) {
-//     let isToggleFeatures = false;
-//     node.forEachChild((child) => {
-//         if (
-//             child.isKind(SyntaxKind.Identifier) &&
-//             child.getText() === 'toggleFeatures'
-//         ) {
-//             isToggleFeatures = true;
-//         }
-//     });
-//     return isToggleFeatures;
-// }
-
-// files.forEach((sourceFile) => {
-//     sourceFile.forEachDescendant((node) => {
-//         if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-//             const objectOptions = node.getFirstAncestorByKind(
-//                 SyntaxKind.ObjectLiteralExpression,
-//             );
-//             const onFunctionProperty = objectOptions?.getProperty('on');
-//             const offFunctionProperty = objectOptions?.getProperty('off');
-//             const nameFunctionProperty = objectOptions?.getProperty('name');
-
-//             const onFunction = onFunctionProperty?.getFirstDescendantByKind(
-//                 SyntaxKind.ArrowFunction,
-//             );
-//             const offFunction = offFunctionProperty?.getFirstDescendantByKind(
-//                 SyntaxKind.ArrowFunction,
-//             );
-//             const nameFunction = nameFunctionProperty
-//                 ?.getFirstDescendantByKind(SyntaxKind.ArrowFunction)
-//                 ?.getText()
-//                 .slice(1, -1);
-
-//             if (nameFunction !== removedFeatureName) {
-//                 return;
-//             }
-
-//             if (featureState === 'on') {
-//                 node.replaceWithText(onFunction?.getBody().getText() ?? '');
-//             }
-
-//             if (featureState === 'off') {
-//                 node.replaceWithText(offFunction?.getBody().getText() ?? '');
-//             }
-//         }
-//     });
-// });
-
-// project.save();
