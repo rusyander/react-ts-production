@@ -1,0 +1,28 @@
+.code {
+    border: 1px solid var(--primary-color);
+    padding: 20px;
+    position: relative;
+    background: var(--code-bg);
+    color: var(--primary-color);
+    overflow: auto;
+}
+.copyBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--bg-redesigned);
+    }
+}
+
+.codeRedesigned {
+    border: 1px solid var(--accent-redesigned);
+    padding: 20px;
+    position: relative;
+    background: var(--light-bg-redesigned);
+    // color: var(--primary-color);
+    overflow: auto;
+    border-radius: 16px;
+}
