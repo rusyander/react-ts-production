@@ -1,10 +1,13 @@
 {
-  "Статья не найдена": "Article not found",
-  "Произошла ошибка при загрузке статьи": "An error occurred while loading the article",
-  "Коментарии": "Comments",
-  "Введите текст коментарий": "Enter comment text",
-  "Отправить": "Send",
-  "Назад": "Back",
-  "Рекомендуем": "Recommended",
-  "Редактировать": "Edit"
+    "Статья не найдена": "Article not found",
+    "Произошла ошибка при загрузке статьи": "An error occurred while loading the article",
+    "Коментарии": "Comments",
+    "Введите текст коментарий": "Enter comment text",
+    "Отправить": "Send",
+    "Назад": "Back",
+    "Рекомендуем": "Recommended",
+    "Редактировать": "Edit",
+    "{{count}} просмотров_zero": "{{count}} views",
+    "{{count}} просмотров_one": "{{count}} view",
+    "{{count}} просмотров_other": "{{count}} views"
 }
