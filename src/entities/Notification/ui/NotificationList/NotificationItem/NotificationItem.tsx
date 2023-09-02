@@ -23,6 +23,7 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
             on={
                 <Card
                     variant="outlined"
+                    max
                     className={classNames(cls.notificationItem, {}, [
                         className,
                     ])}

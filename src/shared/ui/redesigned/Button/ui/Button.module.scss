@@ -69,6 +69,14 @@
     color: var(--text-redesigned);
 }
 
+.outline {
+    background: var(--dark-bg-redesigned);
+
+    border-radius: 34px;
+    color: var(--text-redesigned);
+    border: 1px solid var(--icon-redesigned);
+}
+
 .addonLeft,
 .addonRight {
     display: flex;

@@ -6,6 +6,8 @@ import { useNotificationList } from '../../api/notificationApi';
 import { VStack } from '@/shared/ui/Stack';
 import { NotificationItem } from './NotificationItem/NotificationItem';
 import { Skeleton as SkeletonOld } from '@/shared/ui/Skeleton/ui/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Skeleton as SkeletonNew } from '@/shared/ui/redesigned/Skeleton';
 
 interface NotificationListProps {
     className?: string;
@@ -18,15 +20,21 @@ export const NotificationList = memo((props: NotificationListProps) => {
         pollingInterval: 10000,
     });
 
+    const Skeleton = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => SkeletonNew,
+        off: () => SkeletonOld,
+    });
+
     if (isLoading) {
         return (
             <VStack
                 gap="16"
                 className={classNames(cls.notificationList, {}, [className])}
             >
-                <SkeletonOld width="100%" border="8px" height="80px" />
-                <SkeletonOld width="100%" border="8px" height="80px" />
-                <SkeletonOld width="100%" border="8px" height="80px" />
+                <Skeleton width="100%" border="8px" height="80px" />
+                <Skeleton width="100%" border="8px" height="80px" />
+                <Skeleton width="100%" border="8px" height="80px" />
             </VStack>
         );
     }

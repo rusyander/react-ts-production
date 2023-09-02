@@ -61,7 +61,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                     )}
                 >{`${label}>`}</span>
             )} */}
-            {label && <span>{`${label}>`}</span>}
+            {label && <span>{`${label}:`}</span>}
             <HListbox
                 disabled={readonly}
                 as="div"

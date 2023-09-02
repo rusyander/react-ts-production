@@ -59,3 +59,9 @@
         font: var(--font-s-redesigned);
     }
 }
+.bold {
+    .title,
+    .text {
+        font-weight: 700;
+    }
+}
