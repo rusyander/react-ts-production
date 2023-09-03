@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Suspense } from 'react';
 
 const meta: Meta<typeof AppLink> = {
-    title: 'shared/AppLink',
+    title: 'shared/New/AppLink',
     component: AppLink,
     tags: ['autodocs'],
 

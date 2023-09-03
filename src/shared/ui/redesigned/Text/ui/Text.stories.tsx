@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Text> = {
-    title: 'shared/Text',
+    title: 'shared/New/Text',
     component: Text,
     tags: ['autodocs'],
     decorators: [

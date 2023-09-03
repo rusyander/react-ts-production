@@ -68,3 +68,5 @@ export default function App() {
         />
     );
 }
+
+// export default <WithTheme Component={App} />;

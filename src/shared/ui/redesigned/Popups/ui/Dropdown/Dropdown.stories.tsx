@@ -8,67 +8,67 @@ import { BrowserRouter } from 'react-router-dom';
 import { Button } from '../../../Button/ui/Button';
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'shared/Dropdown',
-  component: Dropdown,
-  tags: ['autodocs'],
+    title: 'shared/New/Dropdown',
+    component: Dropdown,
+    tags: ['autodocs'],
 
-  decorators: [
-    (Story) => (
-      <Suspense fallback={''}>
-        <BrowserRouter>
-          <StoreProvider>
-            <ThemeProvider>
-              <div className={`'app' ${Theme.DARK}`}>
-                <Story />
-              </div>
-            </ThemeProvider>
-          </StoreProvider>
-        </BrowserRouter>
-      </Suspense>
-    ),
-  ],
+    decorators: [
+        (Story) => (
+            <Suspense fallback={''}>
+                <BrowserRouter>
+                    <StoreProvider>
+                        <ThemeProvider>
+                            <div className={`'app' ${Theme.DARK}`}>
+                                <Story />
+                            </div>
+                        </ThemeProvider>
+                    </StoreProvider>
+                </BrowserRouter>
+            </Suspense>
+        ),
+    ],
 };
 
 export default meta;
 type Story = StoryObj<typeof Dropdown>;
 
 export const Primary: Story = {
-  args: {
-    trigger: <Button>Dropdown</Button>,
-    items: [
-      {
-        content: 'Item 1',
-        onClick: () => {
-          console.log('Item 1');
-        },
-      },
-      {
-        content: 'Item 2',
-        onClick: () => {
-          console.log('Item 1');
-        },
-      },
-      {
-        content: 'Item 3',
-        onClick: () => {
-          console.log('Item 1');
-        },
-      },
-    ],
-  },
+    args: {
+        trigger: <Button>Dropdown</Button>,
+        items: [
+            {
+                content: 'Item 1',
+                onClick: () => {
+                    console.log('Item 1');
+                },
+            },
+            {
+                content: 'Item 2',
+                onClick: () => {
+                    console.log('Item 1');
+                },
+            },
+            {
+                content: 'Item 3',
+                onClick: () => {
+                    console.log('Item 1');
+                },
+            },
+        ],
+    },
 };
 
 Primary.decorators = [
-  (Story) => (
-    <ThemeProvider>
-      <div className={`'app' ${Theme.DARK}`}>
-        <Story />
-      </div>
-    </ThemeProvider>
-  ),
-  // StoreDecorator({
-  //   articleDetails: {
-  //     data: {},
-  //   },
-  // }),
+    (Story) => (
+        <ThemeProvider>
+            <div className={`'app' ${Theme.DARK}`}>
+                <Story />
+            </div>
+        </ThemeProvider>
+    ),
+    // StoreDecorator({
+    //   articleDetails: {
+    //     data: {},
+    //   },
+    // }),
 ];

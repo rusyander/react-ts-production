@@ -7,45 +7,45 @@ import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Drawer> = {
-  title: 'shared/Drawer',
-  component: Drawer,
-  tags: ['autodocs'],
+    title: 'shared/New/Drawer',
+    component: Drawer,
+    tags: ['autodocs'],
 
-  decorators: [
-    (Story) => (
-      <Suspense fallback={''}>
-        <BrowserRouter>
-          <StoreProvider>
-            <ThemeProvider>
-              <div className={`'app' ${Theme.DARK}`}>
-                <Story />
-              </div>
-            </ThemeProvider>
-          </StoreProvider>
-        </BrowserRouter>
-      </Suspense>
-    ),
-  ],
+    decorators: [
+        (Story) => (
+            <Suspense fallback={''}>
+                <BrowserRouter>
+                    <StoreProvider>
+                        <ThemeProvider>
+                            <div className={`'app' ${Theme.DARK}`}>
+                                <Story />
+                            </div>
+                        </ThemeProvider>
+                    </StoreProvider>
+                </BrowserRouter>
+            </Suspense>
+        ),
+    ],
 };
 
 export default meta;
 type Story = StoryObj<typeof Drawer>;
 
 export const Primary: Story = {
-  args: {},
+    args: {},
 };
 
 Primary.decorators = [
-  (Story) => (
-    <ThemeProvider>
-      <div className={`'app' ${Theme.DARK}`}>
-        <Story />
-      </div>
-    </ThemeProvider>
-  ),
-  // StoreDecorator({
-  //   articleDetails: {
-  //     data: {},
-  //   },
-  // }),
+    (Story) => (
+        <ThemeProvider>
+            <div className={`'app' ${Theme.DARK}`}>
+                <Story />
+            </div>
+        </ThemeProvider>
+    ),
+    // StoreDecorator({
+    //   articleDetails: {
+    //     data: {},
+    //   },
+    // }),
 ];

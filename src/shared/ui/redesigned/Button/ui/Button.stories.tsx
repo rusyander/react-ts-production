@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Button> = {
-    title: 'shared/Button',
+    title: 'shared/New/Button',
     component: Button,
     tags: ['autodocs'],
     // decorators: [
