@@ -7,14 +7,17 @@ import './app/styles/index.scss';
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
 import { StoreProvider } from '@/app/providers/StoreProvider';
+import { ForceUpdateProvider } from './shared/lib/render/forceUpdate';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
         <StoreProvider>
             <ErrorBoundary>
-                <ThemeProvider>
-                    <App />
-                </ThemeProvider>
+                <ForceUpdateProvider>
+                    <ThemeProvider>
+                        <App />
+                    </ThemeProvider>
+                </ForceUpdateProvider>
             </ErrorBoundary>
         </StoreProvider>
     </BrowserRouter>,

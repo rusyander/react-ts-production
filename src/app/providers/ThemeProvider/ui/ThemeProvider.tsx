@@ -2,14 +2,16 @@ import { type FC, useMemo, useState, useEffect } from 'react';
 import { ThemeContext } from '../../../../shared/lib/context/ThemeContext';
 import { Theme } from '@/shared/const/theme';
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
-// import { useJsonSettings } from '@/entities/User';
 
 const defaultTheme =
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
+const fallbeckTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme;
+
 const ThemeProvider: FC = ({ children }) => {
-    // const { theme: defaultTheme } = useJsonSettings();
-    const [theme, setTheme] = useState<Theme>(defaultTheme || Theme.LIGHT);
+    const [theme, setTheme] = useState<Theme>(
+        defaultTheme || fallbeckTheme || Theme.LIGHT,
+    );
     const [isThemeInited, setIsThemeInited] = useState(false);
 
     useEffect(() => {
@@ -18,6 +20,11 @@ const ThemeProvider: FC = ({ children }) => {
             setIsThemeInited(true);
         }
     }, [isThemeInited]);
+
+    useEffect(() => {
+        document.body.className = theme;
+        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
+    }, [theme]);
 
     const defaultProps = useMemo(
         () => ({

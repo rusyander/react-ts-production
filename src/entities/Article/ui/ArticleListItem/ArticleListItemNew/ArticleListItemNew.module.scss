@@ -40,6 +40,7 @@
     width: 230px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    padding: 0;
 
     .date {
         position: absolute;
@@ -56,11 +57,11 @@
         }
     }
 
-    .imageWrapper {
-        width: 200px;
-        height: 200px;
-        position: relative;
-    }
+    // .imageWrapper {
+    //     width: 200px;
+    //     height: 200px;
+    //     position: relative;
+    // }
     .img {
         width: 230px;
         height: 140px;

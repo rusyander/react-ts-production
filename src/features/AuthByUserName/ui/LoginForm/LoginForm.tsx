@@ -22,6 +22,7 @@ import { Button } from '@/shared/ui/redesigned/Button';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { Texts } from '@/shared/ui/redesigned/Text';
 import { VStack } from '@/shared/ui/Stack';
+import { useForceUpdate } from '@react-spring/shared';
 
 export interface LoginFormProps {
     className?: string;
@@ -41,6 +42,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
+    const forceUpdate = useForceUpdate();
 
     const onChangeUserName = useCallback(
         (value: string) => {
@@ -61,6 +63,8 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         if (res.meta.requestStatus === 'fulfilled') {
             console.log('fulfilled');
             onSuccess?.();
+            window.location.reload();
+            // forceUpdate();
         }
     }, [dispatch, onSuccess, password, username]);
     return (
