@@ -38,7 +38,6 @@ export default function App() {
                             content={<AppRouter />}
                             header={<Navbar />}
                             sidebar={<Sidebar />}
-                            // toolbar={<div>sdasdasdasda</div>}
                         />
                     </Suspense>
                 </div>
@@ -57,17 +56,4 @@ export default function App() {
             }
         />
     );
-
-    // return (
-    //     <div className={classNames('app', {}, [theme])}>
-    //         <Suspense fallback={''}>
-    //             <Navbar />
-
-    //             <div className="content-page">
-    //                 <Sidebar />
-    //                 {initedUser && <AppRouter />}
-    //             </div>
-    //         </Suspense>
-    //     </div>
-    // );
 }

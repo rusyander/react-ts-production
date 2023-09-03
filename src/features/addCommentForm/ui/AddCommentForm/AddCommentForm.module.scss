@@ -1,8 +1,16 @@
 .addCommentForm {
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  padding: 20px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 20px;
 }
 .input {
-  flex-grow: 1;
+    flex-grow: 1;
+}
+
+.addCommentFormRedesigned {
+    padding: 20px;
+}
+.Margin {
+    margin-top: 20px;
+    margin-bottom: 15px;
 }

@@ -1,14 +1,29 @@
 .starRating {
+    .starIcon {
+        cursor: pointer;
+    }
+    .normal {
+        fill: none;
+    }
+    .hovered {
+        fill: var(--primary-color);
+    }
+    .selected {
+        cursor: auto;
+    }
 }
-.starIcon {
-  cursor: pointer;
-}
-.normal {
-  fill: none;
-}
-.hovered {
-  fill: var(--primary-color);
-}
-.selected {
-  cursor: auto;
+
+.starRatingRedesigned {
+    .starIcon {
+        cursor: pointer;
+    }
+    .normal {
+        fill: none;
+    }
+    .hovered {
+        fill: var(--icon-redesigned);
+    }
+    .selected {
+        cursor: auto;
+    }
 }

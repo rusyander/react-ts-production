@@ -12,7 +12,7 @@ import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
-import { ToggleFeatures, getFeatureFlag } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
 import { AditionalInfoCantainer } from '../AditionalInfoCantainer/AditionalInfoCantainer';
@@ -24,7 +24,6 @@ const redusers: ReducersList = {
 function ArticleDetailsPage() {
     const { t } = useTranslation('articleDetails');
     const { id } = useParams<{ id: string }>();
-    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
 
     // if (!id) {
     //   return (
@@ -33,11 +32,6 @@ function ArticleDetailsPage() {
     //     </Page>
     //   );
     // }
-    // const counter = toggleFeatures({
-    //     name: 'isArticleRatingEnabled',
-    //     on: () => <h1>Counter ON</h1>,
-    //     off: () => <h1>Counter OFF</h1>,
-    // });
 
     return (
         <DynamicModuleLoader reducers={redusers} removeAfterUnmaunt={true}>
@@ -48,7 +42,6 @@ function ArticleDetailsPage() {
                         content={
                             <Page>
                                 <VStack max gap="16">
-                                    {/* <ArticleDetails id={id} /> */}
                                     <DetailsContainer />
                                     <ArticleRating articleId={id} />
                                     <ArticleRecommendationsList />
@@ -63,7 +56,6 @@ function ArticleDetailsPage() {
                     <Page>
                         <VStack max gap="16">
                             <ArticleDetailsPageHeader />
-                            {/* <ArticleDetails id={id} /> */}
                             <DetailsContainer />
                             <ArticleRating articleId={id} />
                             <ArticleRecommendationsList />
@@ -74,20 +66,5 @@ function ArticleDetailsPage() {
             />
         </DynamicModuleLoader>
     );
-
-    // (
-    //     <DynamicModuleLoader reducers={redusers} removeAfterUnmaunt={true}>
-    //         <Page>
-
-    //             <VStack max gap="16">
-    //                 <ArticleDetailsPageHeader />
-    //                 <ArticleDetails id={id} />
-    //                 {isArticleRatingEnabled && <ArticleRating articleId={id} />}
-    //                 <ArticleRecommendationsList />
-    //                 <ArticleDetailsComments id={id} />
-    //             </VStack>
-    //         </Page>
-    //     </DynamicModuleLoader>
-    // );
 }
 export default memo(ArticleDetailsPage);
