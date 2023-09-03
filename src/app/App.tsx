@@ -12,11 +12,13 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
 
 export default function App() {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const initedUser = useSelector(getUserInitedSelectors);
+    const toolbarContent = useAppToolbar();
 
     useEffect(() => {
         dispatch(initAuth());
@@ -32,13 +34,6 @@ export default function App() {
                 />
             </div>
         );
-        // return (
-        //     <ToggleFeatures
-        //         feature={'isAppRedesigned'}
-        //         on={<AppLoaderLayout />}
-        //         off={<PageLoader />}
-        //     />
-        // );
     }
     return (
         <ToggleFeatures
@@ -53,6 +48,7 @@ export default function App() {
                             content={<AppRouter />}
                             header={<Navbar />}
                             sidebar={<Sidebar />}
+                            toolbar={toolbarContent}
                         />
                     </Suspense>
                 </div>

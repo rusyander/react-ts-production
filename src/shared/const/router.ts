@@ -25,3 +25,16 @@ export const getRouteForbidden = () => '/forbidden';
 export const getRouteSettings = () => '/settings';
 
 export const getRouteNot_found = () => '*';
+
+export const AppRouteByPathPattern: Record<string, AppRoute> = {
+    [getRouteMain()]: AppRoute.MAIN,
+    [getRouteAbout()]: AppRoute.ABOUT,
+    [getRouteProfile(':id')]: AppRoute.PROFILE,
+    [getRouteArticles()]: AppRoute.ARTICLES,
+    [getRouteArticle_details(':id')]: AppRoute.ARTICLE_DETAILS,
+    [getRouteArticle_create()]: AppRoute.ARTICLE_CREATE,
+    [getRouteArticle_edit(':id')]: AppRoute.ARTICLE_EDIT,
+    [getRouteAdmin_panel()]: AppRoute.ADMIN_PANEL,
+    [getRouteForbidden()]: AppRoute.FORBIDDEN,
+    [getRouteSettings()]: AppRoute.SETTINGS,
+};
