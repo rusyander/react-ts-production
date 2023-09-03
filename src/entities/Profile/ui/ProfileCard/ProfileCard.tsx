@@ -10,6 +10,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { OldProfileCard } from '../OldProfileCard/OldProfileCard';
 import { RedesignedProfileCard } from '../RedesignedProfileCard/RedesignedProfileCard';
+import { Texts } from '@/shared/ui/redesigned/Text';
 
 interface ProfileCardProps {
     className?: string;
@@ -55,11 +56,24 @@ export const ProfileCard = memo(
                         cls.error,
                     ])}
                 >
-                    <TextsOld
-                        align="center"
-                        theme="error"
-                        title={t('Произошла ошибка')}
-                        text={t('Попробуйте обновить страницу')}
+                    <ToggleFeatures
+                        feature="isAppRedesigned"
+                        on={
+                            <Texts
+                                align="center"
+                                variant="error"
+                                title={t('Произошла ошибка')}
+                                text={t('Попробуйте обновить страницу')}
+                            />
+                        }
+                        off={
+                            <TextsOld
+                                align="center"
+                                theme="error"
+                                title={t('Произошла ошибка')}
+                                text={t('Попробуйте обновить страницу')}
+                            />
+                        }
                     />
                 </HStack>
             );

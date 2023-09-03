@@ -7,7 +7,7 @@ import { Currency } from '@/entities/Currency';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Texts } from '@/shared/ui/Text';
+import { Texts as TextsOld } from '@/shared/ui/Text';
 import { ProfileCard } from '@/entities/Profile';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
@@ -23,6 +23,8 @@ import { ProfileActions, ProfileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCartHeader } from '../EditableProfileCartHeader/EditableProfileCartHeader';
 import { VStack } from '@/shared/ui/Stack';
 import { ValidateProfileError } from '../../model/consts/consts';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Texts } from '@/shared/ui/redesigned/Text';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -132,12 +134,27 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 <EditableProfileCartHeader />
                 {validateErrors?.length &&
                     validateErrors?.map((err) => (
-                        <Texts
-                            key={err}
-                            theme="error"
-                            text={validateErrorTranslates[err]}
-                            data-testid="EditableProfileCard.Error"
-                        />
+                        <>
+                            <ToggleFeatures
+                                feature="isAppRedesigned"
+                                on={
+                                    <Texts
+                                        key={err}
+                                        variant="error"
+                                        text={validateErrorTranslates[err]}
+                                        data-testid="EditableProfileCard.Error"
+                                    />
+                                }
+                                off={
+                                    <TextsOld
+                                        key={err}
+                                        theme="error"
+                                        text={validateErrorTranslates[err]}
+                                        data-testid="EditableProfileCard.Error"
+                                    />
+                                }
+                            />
+                        </>
                     ))}
                 <ProfileCard
                     data={formData}

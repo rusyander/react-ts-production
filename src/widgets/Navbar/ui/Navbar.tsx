@@ -1,18 +1,19 @@
 import { memo, useCallback, useState } from 'react';
 import cls from './Navbar.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button/ui/Button';
+import { Button as ButtonOld } from '@/shared/ui/Button/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from '@/features/AuthByUserName';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
-import { Texts } from '@/shared/ui/Text';
-import { AppLink } from '@/shared/ui/AppLink';
+import { Texts as TextsOld } from '@/shared/ui/Text';
+import { AppLink as AppLinkOld } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { getRouteArticle_create } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 interface NavbarProps {
     className?: string;
@@ -50,18 +51,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 off={
                     <header className={classNames(cls.navbar, {}, [className])}>
                         <div className={cls.flex}>
-                            <Texts
+                            <TextsOld
                                 theme="inverted"
                                 className={cls.AppName}
                                 title={t('Blog')}
                             />
-                            <AppLink
+                            <AppLinkOld
                                 theme="secondary"
                                 to={getRouteArticle_create()}
                                 className={cls.createBtn}
                             >
                                 {t('Создать статью')}
-                            </AppLink>
+                            </AppLinkOld>
                         </div>
                         <HStack gap="16" className={cls.actions}>
                             <NotificationButton />
@@ -71,35 +72,35 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 }
             />
         );
-
-        // (
-        //   <header className={classNames(cls.navbar, {}, [className])}>
-        //     <div className={cls.flex}>
-        //       <Texts theme="inverted" className={cls.AppName} title={t('Blog')} />
-        //       <AppLink
-        //         theme="secondary"
-        //         to={getRouteArticle_create()}
-        //         className={cls.createBtn}
-        //       >
-        //         {t('Создать статью')}
-        //       </AppLink>
-        //     </div>
-        //     <HStack gap="16" className={cls.actions}>
-        //       <NotificationButton />
-        //       <AvatarDropdown />
-        //     </HStack>
-        //   </header>
-        // );
     }
 
     return (
-        <header className={classNames(cls.navbar, {}, [className])}>
-            <Texts className={cls.AppName} title={t('Blog')} />
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <header
+                    className={classNames(cls.navbarRedesigned, {}, [
+                        className,
+                    ])}
+                >
+                    {/* <Texts className={cls.AppName} title={t('Blog')} /> */}
 
-            <Button theme="clearInvert" onClick={onOpenModal}>
-                {t('Войти')}
-            </Button>
-            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-        </header>
+                    <Button variant="clear" onClick={onOpenModal}>
+                        {t('Войти')}
+                    </Button>
+                    <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+                </header>
+            }
+            off={
+                <header className={classNames(cls.navbar, {}, [className])}>
+                    <TextsOld className={cls.AppName} title={t('Blog')} />
+
+                    <ButtonOld theme="clearInvert" onClick={onOpenModal}>
+                        {t('Войти')}
+                    </ButtonOld>
+                    <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+                </header>
+            }
+        />
     );
 });

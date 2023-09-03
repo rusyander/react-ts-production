@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
 export type CardPadding = '0' | '8' | '16' | '24';
-export type CardBorder = 'round' | 'normal';
+export type CardBorder = 'round' | 'normal' | 'medium';
 
 const paddingMap: Record<CardPadding, string> = {
     0: 'gap_0',
@@ -15,6 +15,7 @@ const paddingMap: Record<CardPadding, string> = {
 const cardBorderMap: Record<CardBorder, string> = {
     round: 'card_round',
     normal: 'card_normal',
+    medium: 'card_medium',
 };
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {

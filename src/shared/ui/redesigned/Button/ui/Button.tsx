@@ -5,6 +5,8 @@ import cls from './Button.module.scss';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     variant?: 'clear' | 'outline' | 'filled';
+    color?: 'normal' | 'success' | 'error';
+
     square?: boolean;
     size?: 'l' | 'm' | 'xl';
     disabled?: boolean;
@@ -18,6 +20,7 @@ export const Button = memo((props: ButtonProps) => {
         className,
         children,
         variant = 'outline',
+        color = 'normal',
         square,
         size = 'm',
         disabled,
@@ -41,6 +44,7 @@ export const Button = memo((props: ButtonProps) => {
                 className,
                 cls[variant],
                 cls[size],
+                cls[color],
             ])}
         >
             <div className={cls.addonLeft}>{addonLeft}</div>
